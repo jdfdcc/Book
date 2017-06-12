@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ClickPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="life">
+        <ion-title>打卡页面</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+                <ion-icon name="more"></ion-icon>
+             </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <section class="heard_time">
+        <p>{{time | intToTimePipe}}</p>
+    </section>
+    <section class="click_button_out">
+        <p>梦想是要有的万一实现了呢？</p>
+        <div tappable class="two click_button_left " *ngIf="!clickFlag " (click)="clickEnd()" [ngStyle]=" { 'right': !clickFlag? '20px': ''} " [ngClass]="{'click_button_center':clickFlag}">
+            <div class=" click_button_in ">结束</div>
+        </div>
+        <div tappable class="one" (click)="clickStart()" [ngStyle]="{'left': !clickFlag? '20px': ''}" [ngClass]="{'click_button_center':clickFlag}">
+            <div class="click_button_in " *ngIf="clickFlag ">开始</div>
+            <div [ngStyle]="{ 'background': !clickFlag? 'gray': 'blue' } " class=" click_button_in " *ngIf="!clickFlag ">暂停</div>
+        </div>
+    </section>
+</ion-content>

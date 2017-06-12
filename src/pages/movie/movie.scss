@@ -1,0 +1,17 @@
+page-movie {
+    page-movie-detail {
+        ion-chip {
+            margin: 2px;
+        }
+    }
+    .background-image {
+        background-size: cover;
+        background-position: center;
+        height: 45vh;
+    }
+    .main-content {
+        padding: 20px;
+        background-color: #F4F4F4;
+        position: absolute;
+    }
+}
