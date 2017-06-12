@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 //providers
 import { AppGlobal } from '../providers/app-global'
 import { Data } from '../providers/data';
@@ -46,7 +47,8 @@ import { DbServiceProvider } from '../providers/db-service/db-service';
     Data,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     JAlertProvider,
-    DbServiceProvider
+    DbServiceProvider,
+    SQLite
   ]
 })
 export class AppModule { }
