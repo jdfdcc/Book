@@ -1,0 +1,128 @@
+page-click {
+    .heard_time {
+        text-align: center;
+        font-size: 5rem;
+        color: green;
+        font-family: fantasy;
+        border-bottom: 1px solid green;
+        max-height: 50%;
+        min-height: 36%;
+        padding-top: 32px;
+    }
+    .click_button_center {
+        left: -moz-calc(50% - 40px);
+        left: -webkit-calc(50% - 40px);
+        left: calc(50% - 40px);
+    }
+    .click_button_out .one,
+    .click_button_out .two {
+        width: 80px;
+        height: 80px;
+        border: 3px solid green;
+        border-radius: 50%;
+        padding: 3px;
+        position: absolute;
+        bottom: 88px;
+        -webkit-animation: warn 1.5s ease-out;
+        -moz-animation: warn 1.5s ease-out;
+        animation: warn 1.5s ease-out;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    }
+    .click_button_out p {
+        font-family: cursive;
+        text-align: center;
+        font-size: 1.6rem;
+        font-style: oblique;
+        text-shadow: 2px 2px 2px gold;
+    }
+    .click_button_in {
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background: rgb(0, 128, 0);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        line-height: 68px;
+        font-size: 2rem;
+    } //按钮闪动效果
+    // .click_button_left {
+    //     position: absolute;
+    //     -webkit-animation: to_left 2.5s ease-in;
+    //     -moz-animation: to_left 2.5s ease-in;
+    //     animation: to_left 2.5s ease-in;
+    //     -webkit-animation-iteration-count: 1;
+    //     -moz-animation-iteration-count: 1;
+    //     animation-iteration-count: 1;
+    // }
+    // .click_button_right {}
+    @keyframes warn {
+        0% {
+            -webkit-box-shadow: 0 0 10px 10px white;
+            -moz-box-shadow: 0 0 10px 10px white;
+            box-shadow: 0 0 10px 10px white;
+        }
+        25% {}
+        50% {
+            -webkit-box-shadow: 0 0 10px 10px #B4EEB4;
+            -moz-box-shadow: 0 0 10px 10px #B4EEB4;
+            box-shadow: 0 0 10px 10px #B4EEB4;
+        }
+        75% {}
+        100% {}
+    }
+    @-webkit-keyframes warn {
+        0% {
+            -webkit-box-shadow: 0 0 10px 10px white;
+            -moz-box-shadow: 0 0 10px 10px white;
+            box-shadow: 0 0 10px 10px white;
+        }
+        25% {}
+        50% {
+            -webkit-box-shadow: 0 0 10px 10px #B4EEB4;
+            -moz-box-shadow: 0 0 10px 10px #B4EEB4;
+            box-shadow: 0 0 10px 10px #B4EEB4;
+        }
+        75% {}
+        100% {}
+    } //按钮移动效果 -左边
+    @keyframes to_left {
+        0% {
+            margin-left: 0px;
+        }
+        25% {}
+        50% {}
+        75% {}
+        100% {
+            margin-left: 120px;
+        }
+    }
+    @-webkit-keyframes to_left {
+        0% {}
+        25% {}
+        50% {}
+        75% {}
+        100% {
+            margin-left: 20px;
+        }
+    } //按钮移动效果 -右边
+    @keyframes to_right {
+        0% {}
+        25% {}
+        50% {}
+        75% {}
+        100% {
+            margin-left: 220px;
+        }
+    }
+    @-webkit-keyframes to_right {
+        0% {}
+        25% {}
+        50% {}
+        75% {}
+        100% {
+            margin-left: 220px;
+        }
+    }
+}

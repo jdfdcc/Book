@@ -1,0 +1,49 @@
+<ion-content style="background:rgb(233, 233, 233)" test>
+    <section class="p_bg_heard" style="background-image: url(assets/bg-img/p_bg.jpg)">
+        <img src="assets/bg-img/dog.jpg">
+        <div tappable (click)="toEditPersonMsg()">
+            <span>迷茫的小吧狗</span><br>
+            <span style="line-height: 30px;color: green!important">
+                <button ion-button style="height: 20px;font-size: .5em!important;">签到</button>
+                本月已经签到10天。
+            </span>
+        </div>
+    </section>
+    <section class="p_body" style="height: 300px">
+        <div class="p_title">
+            <span style="font-size: 1.3em">
+                <ion-icon name="card" style="color: orange"></ion-icon>
+            1000 &nbsp;&nbsp;会员币 | <span style="color: gray;font-size: .8em">积分9999</span>
+            </span>
+        </div>
+        <div class="p_con">
+            <div class="row" *ngFor="let car of carList">
+                <div class="col" *ngFor="let carItem of car.list">
+                    <ion-icon [ngStyle]="carItem.style" name="{{carItem.ion}}"></ion-icon>
+                    <br><span style="font-size: .8em"> {{carItem.text}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="p_body ">
+        <div class="p_title">
+            <span style="font-size: 1.3em">
+                <ion-icon name="mail" style="color: orange;font-size: 1em"></ion-icon>
+            <span style="color: gray;font-size: .6em">您还有一些未读消息未查看，进去看看？</span>
+            </span>
+        </div>
+        <div class="p_con">
+            <div class="p_con">
+                <div class="row">
+                    <div class="col" *ngFor="let carItem of dataList">
+                        <ion-icon [ngStyle]="carItem.style" name="{{carItem.ion}}"></ion-icon><br> {{carItem.text}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</ion-content>
+<!--
+  个人中心
+-->

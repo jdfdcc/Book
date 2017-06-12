@@ -1,0 +1,57 @@
+page-contact {
+    .p_bg_heard {
+        height: 30%;
+        padding: 30px 10px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .p_bg_heard * {
+        float: left;
+    }
+    .p_bg_heard img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        //      background: url("../img/bg-img/dog.jpg");
+        background-size: 100% 100%;
+        line-height: 100px;
+        text-align: center;
+    }
+    .p_bg_heard div {
+        margin: 20px 0px 0px 16px;
+    }
+    .p_bg_heard div :first-child {
+        font-size: 1.5em;
+        color: white!important;
+    }
+    // .p_bg_heard section span:last-child {
+    //     margin-top: -23px;
+    //     font-size: 28px;
+    //     float: right;
+    //     margin-left: 20px;
+    //     color: gray!important;
+    // }
+    .p_body {
+        min-height: 130px;
+        margin: 20px 0px;
+        background: white;
+    }
+    .p_body .p_title {
+        height: 45px;
+        border: 1px solid rgb(237, 237, 237);
+        line-height: 45px;
+        padding: 0px 20px;
+    }
+    .p_con .col {
+        height: 124px;
+        text-align: center;
+        border: 1px solid rgb(237, 237, 237);
+        line-height: 25px;
+        padding: 25px 0px;
+        color: gray;
+    }
+    .p_con .col ion-icon {
+        font-size: 2.5em;
+        // color: orangered;
+    }
+}

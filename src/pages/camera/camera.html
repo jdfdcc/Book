@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            相机
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <button ion-button class="camera_press" (click)='takePhoto()'>  <ion-icon name="camera"></ion-icon></button>
+
+    <img src="{{item}}" class="show_img" *ngFor="let item of imgList">
+
+    <p myHighlight>Highlight me!</p>
+</ion-content>
