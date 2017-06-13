@@ -14,8 +14,9 @@ export class JAlertProvider {
   constructor(public alertCtrl: AlertController) {
   }
   //提示框
-  alert(str = "没有提示信息！", title = "提示", callback = () => { }) {
+  alert(str = "没有提示信息！", title = "提示", callback = () => { }, enableBackdropDismiss: boolean = false) {
     let alert = this.alertCtrl.create({
+      enableBackdropDismiss: enableBackdropDismiss,
       title: title,
       subTitle: str,
       buttons: ['确定']
@@ -23,8 +24,9 @@ export class JAlertProvider {
     alert.present();
   }
   //确认框
-  confirm(str = "没有提示信息！", title = "提示", callback = (flag: boolean) => { }, btnArray = ["取消", "确定"]) {
+  confirm(str = "没有提示信息！", title = "提示", callback = (flag: boolean) => { }, btnArray = ["取消", "确定"], enableBackdropDismiss: boolean = false) {
     let confirm = this.alertCtrl.create({
+      enableBackdropDismiss: enableBackdropDismiss,
       title: title,
       message: str,
       buttons: [

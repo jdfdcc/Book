@@ -17,7 +17,7 @@ import { ElasticHeader } from '../directives/elastic-header/elastic-header';
 import { ImageLoader } from '../directives/image-loader/image-loader';
 import { HighlightDirective } from '../directives/highlight/highlight';
 //pages
-import { PersonInfoPage } from '../pages/person-info/person-info';
+// import { PersonInfoPage } from '../pages/person-info/person-info';
 import { DbServiceProvider } from '../providers/db-service/db-service';
 //pipes
 //基础模块
@@ -26,8 +26,7 @@ import { DbServiceProvider } from '../providers/db-service/db-service';
     MyApp,
     ElasticHeader,
     ImageLoader,
-    HighlightDirective,
-    PersonInfoPage,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -36,8 +35,7 @@ import { DbServiceProvider } from '../providers/db-service/db-service';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    PersonInfoPage
+    MyApp
   ],
   providers: [
     StatusBar,

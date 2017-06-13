@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JAlertProvider } from "../../providers/j-alert/j-alert";
-// import { DbServiceProvider } from "../../providers/db-service/db-service";
+import { DbServiceProvider } from "../../providers/db-service/db-service";
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite'
 
 /**
@@ -24,27 +24,9 @@ export class ClickPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public alert: JAlertProvider,
-    private sqlite: SQLite) {
-  }
-  database: SQLiteObject;
-  ngOnInit() {
-    this.initDB();
+    private DBService: DbServiceProvider) {
   }
   //初始化数据库
-  initDB() {
-    this.sqlite.create({
-      name: 'data.db',
-      location: 'default'
-    }).then((db: SQLiteObject) => {
-      db.executeSql('create table t_log(name VARCHAR(32))', {})
-        .then(() => console.log('Executed SQL'))
-        .catch(e => console.log(e));
-      this.database = db;
-      db.executeSql("insert into t_log values('123')", {});
-    })
-      .catch(e => console.log(e));
-  }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClickPage');
   }
@@ -65,12 +47,8 @@ export class ClickPage {
     this.timeOption(false);
     this.alert.confirm('当前运动' + this.time + '秒，确定结束运动！', '提示', (res) => {
       if (res) {
-        let result = this.database.executeSql("select * from t_log", [])
-          .then((data) => {
-            debugger;
-            console.log("select->" + data.rows.item(0).name)
-          })
-          .catch(e => console.log(e));
+        this.DBService.initDB();
+        this.DBService.insert();
       } else {
         this.timeOption(true);
       }
