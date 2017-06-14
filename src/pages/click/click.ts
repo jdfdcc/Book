@@ -70,10 +70,7 @@ export class ClickPage {
     // this.alert.alert("小猿们正在努力开发中...");
     let popover = this.popoverCtrl.create(ClickiPoperComponent, {
       dataList: [{ id: "1", text: "运动列表" }], callback: callbck
-    }, {
-        enableBackdropDismiss: false,
-        // showBackdrop
-      });
+    });
     popover.present({
       ev: $event
     });
