@@ -21,7 +21,7 @@ export class DbServiceProvider {
         name: 'data.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
-        db.executeSql('create table if not exists sportDB(sportTime text NOT NULL,sportDate text NOT NULL)', {})
+        db.executeSql('create table if not exists sportDB(id INTEGER PRIMARY KEY AUTOINCREMENT,sportTime text NOT NULL,sportDate text NOT NULL)', {})
           .then(() => console.log('Executed SQL'))
           .catch(e => console.log(e));
         this.database = db;
@@ -35,23 +35,36 @@ export class DbServiceProvider {
     }
   }
   //查询  
-  query() {
-    this.initDB(function callback(res, DB) {
+  query(callback) {
+    let list = [];
+    this.initDB(function call(res, DB) {
       if (res) {
         let result = DB.executeSql("select * from sportDB", []).then((data) => {
-          console.log("select->" + data.rows.item(0).sportTime)
-        }).catch(e => console.log(e));
+          data.rows.forEach(item => {
+            list.push(item);
+            callback(list);
+          });
+        }).catch(e => {
+          console.log(e);
+          callback(list);
+        });
       }
     })
   }
   //插入
-  insert(time) {
+  insert(time, call) {
     this.initDB(function callback(res, DB) {
       if (res) {
         DB.executeSql("INSERT INTO sportDB (sportTime,sportDate) VALUES (?,?);"
           , [time + "", "2017-1-1"])
-          .then(() => alert('暂存成功'))
-          .catch(e => console.log(e));//插入数据
+          .then(() => {
+            console.log('插入成功');
+            call(true)
+          })
+          .catch(e => {
+            console.log('插入失败');
+            call(false, e)
+          });//插入数据
       }
     })
   }

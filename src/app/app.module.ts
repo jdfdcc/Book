@@ -19,6 +19,7 @@ import { HighlightDirective } from '../directives/highlight/highlight';
 //pages
 // import { PersonInfoPage } from '../pages/person-info/person-info';
 import { DbServiceProvider } from '../providers/db-service/db-service';
+import { ClickiPoperComponent } from '../components/clicki-poper/clicki-poper';
 //pipes
 //基础模块
 @NgModule({
@@ -26,7 +27,9 @@ import { DbServiceProvider } from '../providers/db-service/db-service';
     MyApp,
     ElasticHeader,
     ImageLoader,
-    HighlightDirective
+    HighlightDirective,
+    ClickiPoperComponent,
+    ClickiPoperComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { DbServiceProvider } from '../providers/db-service/db-service';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    ClickiPoperComponent
   ],
   providers: [
     StatusBar,

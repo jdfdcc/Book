@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { JAlertProvider } from "../../providers/j-alert/j-alert";
 import { DbServiceProvider } from "../../providers/db-service/db-service";
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite'
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { ClickiPoperComponent } from "../../components/clicki-poper/clicki-poper";
 
 /**
  * Generated class for the ClickPage page.
@@ -24,7 +25,8 @@ export class ClickPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public alert: JAlertProvider,
-    private DBService: DbServiceProvider) {
+    private DBService: DbServiceProvider,
+    private popoverCtrl: PopoverController) {
   }
   //初始化数据库
   ionViewDidLoad() {
@@ -47,7 +49,8 @@ export class ClickPage {
     this.timeOption(false);
     this.alert.confirm('当前运动' + this.time + '秒，确定结束运动！', '提示', (res) => {
       if (res) {
-        this.DBService.insert(this.time);
+        this.DBService.insert(this.time, (res) => {
+        });
       } else {
         this.timeOption(true);
       }
@@ -55,8 +58,28 @@ export class ClickPage {
   }
   //显示更多操作
   presentPopover($event) {
-    this.DBService.query();
-    this.alert.alert("小猿们正在努力开发中...");
+    this.DBService.query((list) => {
+      console.log(list);
+    });
+    // this.alert.alert("小猿们正在努力开发中...");
+    let popover = this.popoverCtrl.create(ClickiPoperComponent, {
+      dataList: [{ id: "1", text: "运动列表" }], callback: callbck
+    }, {
+        enableBackdropDismiss: false,
+        // showBackdrop
+      });
+    popover.present({
+      ev: $event
+    });
+
+    popover.onWillDismiss((value) => {
+
+    });
+    //回调函数
+    function callbck(res) {
+      console.log(res)
+      // popover.dismiss();
+    }
   }
   // 时间操作
   timeOption(flag) {
@@ -64,4 +87,7 @@ export class ClickPage {
       this.time++;
     }, 1000) : clearInterval(this.interTime);
   }
+
 }
+
+
