@@ -47,8 +47,7 @@ export class ClickPage {
     this.timeOption(false);
     this.alert.confirm('当前运动' + this.time + '秒，确定结束运动！', '提示', (res) => {
       if (res) {
-        this.DBService.initDB();
-        this.DBService.insert();
+        this.DBService.insert(this.time);
       } else {
         this.timeOption(true);
       }
@@ -56,6 +55,7 @@ export class ClickPage {
   }
   //显示更多操作
   presentPopover($event) {
+    this.DBService.query();
     this.alert.alert("小猿们正在努力开发中...");
   }
   // 时间操作
