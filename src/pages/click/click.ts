@@ -32,7 +32,9 @@ export class ClickPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClickPage');
   }
-  //打卡时间
+  /**
+   * 点击开始
+   */
   clickStart() {
     if (this.clickFlag) {
       this.timeOption(this.clickFlag);
@@ -43,7 +45,9 @@ export class ClickPage {
     }
 
   }
-  //保存当天跑步记录
+  /**
+   * 结束运动
+   */
   clickEnd() {
     //暂停时间
     this.timeOption(false);
@@ -56,7 +60,9 @@ export class ClickPage {
       }
     })
   }
-  //显示更多操作
+  /**
+   * 更多功能展示
+   */
   presentPopover($event) {
     this.DBService.query((list) => {
       console.log(list);
@@ -81,7 +87,10 @@ export class ClickPage {
       // popover.dismiss();
     }
   }
-  // 时间操作
+  /**
+   * 时间开始计时或者停止
+   * @param flag boolean
+   */
   timeOption(flag) {
     flag ? this.interTime = setInterval(() => {
       this.time++;
