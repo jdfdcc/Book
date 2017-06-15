@@ -35,15 +35,20 @@ export class DbServiceProvider {
     }
   }
   //查询  
-  query(callback) {
+  queryList(sql: string = "", callback) {
     let list = [];
     this.initDB(function call(res, DB) {
       if (res) {
-        let result = DB.executeSql("select * from sportDB", []).then((data) => {
-          data.rows.forEach(item => {
-            list.push(item);
-            callback(list);
-          });
+        DB.executeSql(sql, []).then((data) => {
+          // data.rows.forEach(item => {
+          //   list.push(item);
+          //   callback(list);
+          // });
+          for (let i = 0; i < data.rows.length; i++) {
+            // var element = data.rows[i];
+            list.push(data.rows.item(i));
+          }
+          callback(list);
         }).catch(e => {
           console.log(e);
           callback(list);

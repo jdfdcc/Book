@@ -21,7 +21,7 @@
         <p>{{time | intToTimePipe}}</p>
     </section>
     <section class="click_button_out">
-        <p>梦想是要有的万一实现了呢？</p>
+        <p>{{contentString}}</p>
         <div tappable class="two click_button_left " *ngIf="!clickFlag " (click)="clickEnd()" [ngStyle]=" { 'right': !clickFlag? '20px': ''} " [ngClass]="{'click_button_center':clickFlag}">
             <div class=" click_button_in ">结束</div>
         </div>

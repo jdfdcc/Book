@@ -24,7 +24,8 @@ export class MyApp {
     //   }, 1000);
     // });
     platform.ready().then(() => {
-      statusBar.styleDefault();
+      // statusBar.styleDefault();
+      statusBar.backgroundColorByName("white");
       //初始化数据信息
       // sqLite.create({
       //   name: 'data.db',
