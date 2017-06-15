@@ -18,7 +18,7 @@
 
 <ion-content>
     <section class="heard_time">
-        <p>{{time | intToTimePipe}}</p>
+        <p>{{time | intToTime}}</p>
     </section>
     <section class="click_button_out">
         <p>{{contentString}}</p>
@@ -26,7 +26,8 @@
             <div class=" click_button_in ">结束</div>
         </div>
         <div tappable class="one" (click)="clickStart()" [ngStyle]="{'left': !clickFlag? '20px': ''}" [ngClass]="{'click_button_center':clickFlag}">
-            <div class="click_button_in " *ngIf="clickFlag ">开始</div>
+            <div class="click_button_in " *ngIf="clickFlag && time=='0'">开始</div>
+            <div class="click_button_in " *ngIf="clickFlag && time!='0'">继续</div>
             <div [ngStyle]="{ 'background': !clickFlag? 'gray': 'blue' } " class=" click_button_in " *ngIf="!clickFlag ">暂停</div>
         </div>
     </section>

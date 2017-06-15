@@ -19,7 +19,15 @@ export class JAlertProvider {
       enableBackdropDismiss: enableBackdropDismiss,
       title: title,
       subTitle: str,
-      buttons: ['确定']
+      buttons: [{
+        text: 'Ok',
+        handler: () => {
+          // begin the alert's dismiss transition
+          // let navTransition = alert.dismiss();
+          callback();
+          return false;
+        }
+      }]
     });
     alert.present();
   }

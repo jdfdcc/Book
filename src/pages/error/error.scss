@@ -9,7 +9,8 @@ page-error {
         min-height: 200px;
         border: none;
         top: 10%;
-        background-image: url("../../assets/image/cloud.png");
+        // background-image: url(assets/image/cloud.png);
+        // background-image: url(../../assets/image/cloud.png);
         background-size: 100% 100%;
         animation: cloud_shack 1s linear infinite;
     }
@@ -20,7 +21,8 @@ page-error {
     .error_rain div {
         width: 10px;
         height: 10px;
-        background-image: url("../../assets/image/rain.png");
+        // background-image: url(assets/image/rain.png);
+        // background-image: url(../../assets/image/rain.png);
         border-radius: 50%;
         background-size: 10px;
         position: relative;

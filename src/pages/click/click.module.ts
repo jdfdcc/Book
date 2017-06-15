@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ClickPage } from './click';
-import { IntToTimePipe } from "../../pipes/int-to-time/int-to-time";
+import { PipesModule } from "../../pipes/pipes.module";
+
 
 @NgModule({
   declarations: [
     ClickPage,
-    IntToTimePipe
   ],
   imports: [
+    PipesModule,
     IonicPageModule.forChild(ClickPage),
   ],
   exports: [
     ClickPage
   ]
 })
-export class ClickPageModule {}
+export class ClickPageModule { }

@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-an
 import { JAlertProvider } from "../../providers/j-alert/j-alert";
 import { DbServiceProvider } from "../../providers/db-service/db-service";
 import { ClickiPoperComponent } from "../../components/clicki-poper/clicki-poper";
-
+import { DateUtilsProvider } from "../../providers/date-utils/date-utils";
 /**
  * Generated class for the ClickPage page.
  *
@@ -26,7 +26,8 @@ export class ClickPage {
     public navParams: NavParams,
     public alert: JAlertProvider,
     private DBService: DbServiceProvider,
-    private popoverCtrl: PopoverController) {
+    private popoverCtrl: PopoverController,
+    private dateUtils: DateUtilsProvider) {
     //初始化页面数据
     this.heartString.push("自己打败自己是最可悲的失败，自己战胜自己是最可贵的胜利。");
     this.heartString.push("成功就是把复杂的问题简单化，然后狠狠去做。");
@@ -38,11 +39,17 @@ export class ClickPage {
     this.heartString.push("让生活的句号圈住的人，是无法前时半步的。");
     this.heartString.push("好习惯的养成，在于不受坏习惯的诱惑。");
     this.heartString.push("梦想总是要有的，万一实现了呢。");
-    this.contentString = this.heartString[Math.round(Math.random()*10)];
+    this.contentString = this.heartString[Math.round(Math.random() * 10)];
   }
-  //初始化数据库
+  //第一次进入的时候执行，适合做初始化数据
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ClickPage');
+
+  }
+  //该事件不管是第一次进入还是缓存后进入都将执行。
+  ionViewWillEnter() {
+    // this.timeOption(true);
+    this.clickFlag = true;
+    this.timeOption(false);
   }
   /**
    * 点击开始
@@ -65,7 +72,13 @@ export class ClickPage {
     this.timeOption(false);
     this.alert.confirm('当前运动' + this.time + '秒，确定结束运动！', '提示', (res) => {
       if (res) {
-        this.DBService.insert(this.time, (res) => {
+        this.DBService.insert({ time: this.time, date: this.dateUtils.dateToSting() }, (res) => {
+          if (res) {
+            this.navCtrl.push('SportListPage', {}, {
+              animate: true,
+              animation: "md-transition"
+            });
+          }
         });
       } else {
         this.timeOption(true);

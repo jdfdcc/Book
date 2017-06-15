@@ -20,19 +20,29 @@ export class SportListPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public DBservice: DbServiceProvider) {
+
   }
 
   ionViewDidLoad() {
-    this.searchSportList();
+    this.searchSportList(null);
   }
 
   /**
    * 查询运动列表
    */
-  searchSportList() {
+  searchSportList(refresher) {
     let sql = "select * from sportDB";
     this.DBservice.queryList(sql, (list) => {
       this.soprtList = list;
+      if (refresher) refresher.complete();
     });
+  }
+  /**
+   * 下拉刷新
+   */
+  doRefresh(refresher) {
+    this.soprtList = [];
+    console.log("下拉刷新");
+    this.searchSportList(refresher);
   }
 }

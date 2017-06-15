@@ -56,19 +56,42 @@ export class DbServiceProvider {
       }
     })
   }
-  //插入
-  insert(time, call) {
+  /**
+   * 插入数据
+   * @param param0 
+   * @param call 回调函数
+   */
+  insert({ time, date }, call) {
+    this.delete(date, function callback(res, DB) {
+      DB.executeSql("INSERT  INTO sportDB (sportTime,sportDate) VALUES (?,?) ;"
+        , [time + "", date])
+        .then(() => {
+          console.log('插入成功');
+          call(true)
+        })
+        .catch(e => {
+          console.log('插入失败');
+          call(false, e)
+        });//插入数据
+    });
+  }
+  /**
+   * 删除数据
+   * @param date 删除条件
+   * @param call 回调函数
+   */
+  delete(date: string = "", call) {
     this.initDB(function callback(res, DB) {
       if (res) {
-        DB.executeSql("INSERT INTO sportDB (sportTime,sportDate) VALUES (?,?);"
-          , [time + "", "2017-1-1"])
+        DB.executeSql("DELETE FROM sportDB WHERE sportDate = (?);"
+          , [date])
           .then(() => {
-            console.log('插入成功');
-            call(true)
+            console.log('删除成功');
+            call(true, DB)
           })
           .catch(e => {
-            console.log('插入失败');
-            call(false, e)
+            console.log('删除失败');
+            call(false, DB, e)
           });//插入数据
       }
     })
