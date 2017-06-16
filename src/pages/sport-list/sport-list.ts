@@ -49,6 +49,12 @@ export class SportListPage {
    * 删除记录 
    */
   delete(item) {
-    
+
+  }
+  /**
+   * 点击 tab进行操作
+   */
+  toDetail(type) {
+    console.log(type)
   }
 }

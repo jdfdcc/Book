@@ -26,9 +26,9 @@
     <ion-fab right bottom>
         <button ion-fab color="life" mini><ion-icon name="ios-add"></ion-icon></button>
         <ion-fab-list side="top">
-            <button ion-fab><ion-icon color="life" name="ios-mail"></ion-icon></button>
-            <button ion-fab><ion-icon color="life" name="ios-bicycle"></ion-icon></button>
-            <button ion-fab><ion-icon color="life" name="ios-alarm"></ion-icon></button>
+            <button ion-fab><ion-icon color="life" (click)="toDetail('mail')"  name="ios-mail"></ion-icon></button>
+            <button ion-fab><ion-icon color="life" (click)="toDetail('bicycle')" name="ios-bicycle"></ion-icon></button>
+            <button ion-fab><ion-icon color="life" (click)="toDetail('alarm')" name="ios-alarm"></ion-icon></button>
         </ion-fab-list>
     </ion-fab>
 
