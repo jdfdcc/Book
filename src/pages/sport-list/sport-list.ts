@@ -45,4 +45,10 @@ export class SportListPage {
     console.log("下拉刷新");
     this.searchSportList(refresher);
   }
+  /**
+   * 删除记录 
+   */
+  delete(item) {
+    
+  }
 }

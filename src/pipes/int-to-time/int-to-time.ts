@@ -19,6 +19,6 @@ export class IntToTimePipe implements PipeTransform {
     h = Math.floor(value / 60 / 60)
     m = Math.floor(value / 60)
     s = value % 60;
-    return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+    return (m < 10 ? "0" + m : m) + "分" + (s < 10 ? "0" + s : s)+"秒";
   }
 }
