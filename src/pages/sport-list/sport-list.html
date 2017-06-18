@@ -3,7 +3,6 @@
         <ion-title>运动列表</ion-title>
     </ion-navbar>
 </ion-header>
-
 <ion-content>
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content refreshingSpinner="crescent"></ion-refresher-content>
@@ -14,7 +13,7 @@
                 <ion-thumbnail item-start>
                     <img src="assets/heardImg/2.jpg">
                 </ion-thumbnail>
-                <h2>{{item.sportTime | intToTime}}</h2>
+                <h2>{{item.sportTime | intToTime:2}}</h2>
                 <p>{{item.sportDate}}</p>
                 <button ion-button clear item-end>查看</button>
             </ion-item>
@@ -26,10 +25,9 @@
     <ion-fab right bottom>
         <button ion-fab color="life" mini><ion-icon name="ios-add"></ion-icon></button>
         <ion-fab-list side="top">
-            <button ion-fab><ion-icon color="life" (click)="toDetail('mail')"  name="ios-mail"></ion-icon></button>
-            <button ion-fab><ion-icon color="life" (click)="toDetail('bicycle')" name="ios-bicycle"></ion-icon></button>
-            <button ion-fab><ion-icon color="life" (click)="toDetail('alarm')" name="ios-alarm"></ion-icon></button>
+            <button ion-fab (click)="toDetail('mail')"><ion-icon color="life"   name="ios-mail"></ion-icon></button>
+            <button ion-fab (click)="toDetail('bicycle')"><ion-icon color="life"  name="ios-bicycle"></ion-icon></button>
+            <button ion-fab (click)="toDetail('alarm')"><ion-icon color="life"  name="ios-alarm"></ion-icon></button>
         </ion-fab-list>
     </ion-fab>
-
 </ion-content>

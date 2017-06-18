@@ -6,6 +6,7 @@
 $ sudo npm install
 $ ionic cordova platform add ios
 $ ionic cordova run ios
+$ ionic serve
 ```
 * author ： jdf
 * 邮箱 ： 805841744@qq.com

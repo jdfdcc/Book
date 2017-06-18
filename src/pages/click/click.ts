@@ -21,6 +21,7 @@ export class ClickPage {
   interTime: any;
   heartString: Array<string> = [];
   contentString: string = "梦想总是要有的，万一实现了呢。";
+  audio: any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -50,6 +51,8 @@ export class ClickPage {
     // this.timeOption(true);
     this.clickFlag = true;
     this.timeOption(false);
+    this.contentString = this.heartString[Math.round(Math.random() * 10)];
+    // document.getElementsByTagName("audio").play();
   }
   /**
    * 点击开始
@@ -95,7 +98,15 @@ export class ClickPage {
     // });
     // this.alert.alert("小猿们正在努力开发中...");
     let popover = this.popoverCtrl.create(ClickiPoperComponent, {
-      dataList: [{ id: "1", text: "运动列表" }, { id: "2", text: "Error页面" }], callback: callbck
+      dataList: [{
+        id: "1", text: "运动列表", url: "SportListPage"
+      }, {
+        id: "2", text: "Error页面", url: "ErrorPage"
+      }, {
+        id: "3", text: "云页面", url: "CloudPage"
+      }, {
+        id: "4", text: "登陆", url: "LoginPage"
+      }], callback: callbck
     });
     popover.present({
       ev: $event
@@ -105,27 +116,11 @@ export class ClickPage {
 
     });
     //回调函数
-    function callbck(res) {
-      switch (res.id) {
-        //跳转至运动列表
-        case "1":
-          navCtrl.push('SportListPage', {}, {
-            animate: true,
-            animation: "md-transition"
-          });
-          break;
-        //跳转至失败页面
-        case "2":
-          navCtrl.push('ErrorPage', {}, {
-            animate: true,
-            animation: "md-transition"
-          });
-          break;
-
-        default:
-          break;
-      }
-
+    function callbck(item) {
+      navCtrl.push(item.url, {}, {
+        animate: true,
+        animation: "md-transition"
+      });
       popover.dismiss();
     }
   }

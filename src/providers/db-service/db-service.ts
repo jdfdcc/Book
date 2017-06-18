@@ -96,4 +96,25 @@ export class DbServiceProvider {
       }
     })
   }
+  /**
+   * 更新数据
+   * @param time 
+   * @param call 
+   */
+  update(time: string = "", call) {
+    this.initDB(function callback(res, DB) {
+      if (res) {
+        DB.executeSql("update  sportDB WHERE sportTime = (?);"
+          , [time])
+          .then(() => {
+            console.log('删除成功');
+            call(true, DB)
+          })
+          .catch(e => {
+            console.log('删除失败');
+            call(false, DB, e)
+          });//插入数据
+      }
+    })
+  }
 }

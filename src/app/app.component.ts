@@ -12,7 +12,7 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage) {
     // storage.get('firstIn').then((result) => {
     //   if (result) {
-    //     this.rootPage = "ClickPage";
+    //     this.rootPage = "Welcome";
     //   }
     //   else {
     //     storage.set('firstIn', true);

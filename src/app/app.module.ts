@@ -18,6 +18,10 @@ import { DateUtilsProvider } from '../providers/date-utils/date-utils';
 import { ComponentsModule } from "../components/components.module";
 //pipes
 import { PipesModule } from "../pipes/pipes.module";
+import { StorageService } from '../providers/storage-service/storage-service';
+
+// import { Welcome } from "../pages/welcome/welcome";
+
 
 //基础模块
 @NgModule({
@@ -37,7 +41,7 @@ import { PipesModule } from "../pipes/pipes.module";
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
   ],
   providers: [
     StatusBar,
@@ -49,7 +53,8 @@ import { PipesModule } from "../pipes/pipes.module";
     DbServiceProvider,
     SQLite,
     DateUtilsProvider,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    StorageService,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })
 export class AppModule { }

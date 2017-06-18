@@ -17,9 +17,13 @@
 
 
 <ion-content>
+    <audio src="assets/sound/boom.mp3" style="opacity:0" autoplay="true">
+    您的浏览器不支持 audio 标签。
+    </audio>
     <section class="heard_time">
         <p>{{time | intToTime}}</p>
     </section>
+
     <section class="click_button_out">
         <p>{{contentString}}</p>
         <div tappable class="two click_button_left " *ngIf="!clickFlag " (click)="clickEnd()" [ngStyle]=" { 'right': !clickFlag? '20px': ''} " [ngClass]="{'click_button_center':clickFlag}">
