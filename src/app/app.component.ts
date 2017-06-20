@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = 'SportListPage';
+  rootPage: any = 'TabsPage';
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage) {
     // storage.get('firstIn').then((result) => {
     //   if (result) {
