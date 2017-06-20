@@ -71,7 +71,7 @@ export class SportListPage {
    * 点击 tab进行操作
    */
   toDetail(type) {
-    console.log(type)
+     this.navCtrl.push(type)
   }
   /**
    * 加载更多

@@ -1,0 +1,25 @@
+<!--
+  Generated template for the MainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-scroll scrollbar-x="false" scrollX scrollbar-y="false" scrollY="false">
+            <div tappable class="scroll-item" [ngClass]="{'choosed':choosed === item.id}" (click)="chooseTab(item)" *ngFor="let item of tabsList">
+                {{item.text}}
+            </div>
+        </ion-scroll>
+        <ion-buttons end style="min-width: 43px;text-align: center;">
+            <button ion-button icon-only color="life">
+             <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-scroll scrollX style="height:40px;">
+    </ion-scroll>
+</ion-content>

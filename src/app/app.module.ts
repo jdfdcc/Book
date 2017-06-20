@@ -35,8 +35,25 @@ import { HttpModule } from '@angular/http';
     //所有providers
     ProvidersModule,
     IonicModule.forRoot(MyApp, {
-      backButtonText: '' // 配置返回按钮的文字  
-    }),
+      platforms: {
+        android: {
+          backButtonText: "",
+          backButtonIcon: "md-arrow-back",
+          iconMode: "md",
+          modalEnter: "modal-md-slide-in",
+          modalLeave: "modal-md-slide-out",
+          pageTransition: "md",
+        },
+        ios: {
+          backButtonText: "",
+          backButtonIcon: "ios-arrow-back",
+          iconMode: "ios",
+          modalEnter: "modal-ios-slide-in",
+          modalLeave: "modal-ios-slide-out",
+          pageTransition: "ios",
+        }
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
