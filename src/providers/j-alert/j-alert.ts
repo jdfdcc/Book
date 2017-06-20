@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import { AlertController } from 'ionic-angular';
+import { AlertController, ModalController } from 'ionic-angular';
+import { ShowMsgComponent } from "../../components/show-msg/show-msg";
 
 
 /*
@@ -11,7 +12,7 @@ import { AlertController } from 'ionic-angular';
 @Injectable()
 export class JAlertProvider {
 
-  constructor(public alertCtrl: AlertController) {
+  constructor(public alertCtrl: AlertController, private modelCtrl: ModalController) {
   }
   //提示框
   alert(str = "没有提示信息！", title = "提示", callback = () => { }, enableBackdropDismiss: boolean = false) {
@@ -54,5 +55,17 @@ export class JAlertProvider {
     });
     confirm.present();
   }
-
+  /**
+   * 
+   * @param str 
+   * @param title 
+   * @param callback 
+   * @param btnArray 
+   * @param enableBackdropDismiss 
+   */
+  alertMsg(msgList: Array<string> = [], title = "提示", callback = (flag: boolean) => { }, btnArray = ["取消", "确定"], enableBackdropDismiss: boolean = false) {
+    let msgModal = this.modelCtrl.create(ShowMsgComponent, { msgList: msgList, callback: callback }, {
+    });
+    msgModal.present();
+  }
 }

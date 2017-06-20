@@ -16,6 +16,7 @@ export class AppGlobal {
   constructor() {
     if (AppGlobal.instance) {
       throw new Error("错误: 请使用AppGlobal.getInstance() 代替使用new.");
+
     }
     AppGlobal.instance = this;
   }

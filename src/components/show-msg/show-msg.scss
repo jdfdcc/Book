@@ -1,0 +1,35 @@
+show-msg {
+    ion-content {
+        background-color: rgba(1, 1, 1, .5)!important;
+    }
+    ion-scroll {
+        border-bottom: 1px solid gainsboro;
+        height: 206px;
+        margin-top: 44px;
+    }
+    ion-scroll p {
+        text-align: left;
+        padding: 0px 5px;
+        font-size: 1.6rem;
+    }
+    .msg_content {
+        background: rgb(255, 255, 255);
+        width: 80%;
+        left: 10%;
+        min-height: 300px;
+        top: 20%;
+        position: absolute;
+        border-radius: 11px;
+    }
+    .toolbar-ios {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .ok_btn {
+        bottom: 3px;
+        position: absolute;
+        width: 100px;
+        left: calc(50% - 50px);
+        height: 39px;
+    }
+}

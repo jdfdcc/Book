@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { JAlertProvider } from "../../providers/j-alert/j-alert";
 
 /**
  * Generated class for the LoginPage page.
@@ -15,7 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class LoginPage {
   name: string = "";
   password: string = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private Jalert: JAlertProvider) {
     this.name = "admin";
     this.password = "123456";
   }
@@ -31,7 +32,8 @@ export class LoginPage {
     if (this.name === "admin" && this.password === "123456") {
       this.navCtrl.push("ClickPage");
     } else {
-      this.navCtrl.push("ErrorPage");
+      this.Jalert.alertMsg(['用户名或者密码不正确！'])
     }
+
   }
 }

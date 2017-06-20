@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModalController, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DbServiceProvider } from "../../providers/db-service/db-service";
+import { Data } from "../../providers/data/data";
+import { UtilsProvider } from "../../providers/utils/utils";
 
 /**
  * Generated class for the SportListPage page.
@@ -14,12 +16,14 @@ import { DbServiceProvider } from "../../providers/db-service/db-service";
   templateUrl: 'sport-list.html',
 })
 export class SportListPage {
-  soprtList: Array<any> = [];
+  sportList: Array<any> = [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public DBservice: DbServiceProvider) {
+    public DBservice: DbServiceProvider,
+    private dateService: Data,
+    private utilsProvider: UtilsProvider) {
 
   }
 
@@ -29,19 +33,31 @@ export class SportListPage {
 
   /**
    * 查询运动列表
+   * @param {obj}刷新或者加载更多对象
    */
-  searchSportList(refresher) {
-    let sql = "select * from sportDB";
-    this.DBservice.queryList(sql, (list) => {
-      this.soprtList = list;
-      if (refresher) refresher.complete();
-    });
+  searchSportList(obj) {
+    if (this.utilsProvider.isWeb) {
+      let that = this;
+      // this.searchSportList(null);
+      that.dateService.getSportList().then(function (res: Array<any>) {
+        console.log(res)
+        that.sportList = that.sportList.concat(res);
+        if (obj) obj.complete();
+      });
+    } else {
+      let sql = "select * from sportDB";
+      this.DBservice.queryList(sql, (list) => {
+        this.sportList = this.sportList.concat(list);
+        if (obj) obj.complete();
+      });
+
+    }
   }
   /**
    * 下拉刷新
    */
   doRefresh(refresher) {
-    this.soprtList = [];
+    this.sportList = [];
     console.log("下拉刷新");
     this.searchSportList(refresher);
   }
@@ -57,4 +73,14 @@ export class SportListPage {
   toDetail(type) {
     console.log(type)
   }
+  /**
+   * 加载更多
+   * @param  
+   */
+  doInfinite(infiniteScroll) {
+    this.searchSportList(infiniteScroll);
+
+  }
+
+
 }

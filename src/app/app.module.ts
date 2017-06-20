@@ -14,13 +14,16 @@ import { Data } from '../providers/data/data';
 import { JAlertProvider } from '../providers/j-alert/j-alert';
 import { DbServiceProvider } from '../providers/db-service/db-service';
 import { DateUtilsProvider } from '../providers/date-utils/date-utils';
+import { UtilsProvider } from '../providers/utils/utils';
 //directives or components
 import { ComponentsModule } from "../components/components.module";
 //pipes
 import { PipesModule } from "../pipes/pipes.module";
 import { StorageService } from '../providers/storage-service/storage-service';
-
 // import { Welcome } from "../pages/welcome/welcome";
+//使用httpModel
+import { HttpModule } from '@angular/http';
+
 
 
 //基础模块
@@ -29,6 +32,7 @@ import { StorageService } from '../providers/storage-service/storage-service';
     MyApp,
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicStorageModule.forRoot(),
     //存放所有管道集合
@@ -55,6 +59,8 @@ import { StorageService } from '../providers/storage-service/storage-service';
     DateUtilsProvider,
     StorageService,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    UtilsProvider,
+    UtilsProvider,
   ]
 })
 export class AppModule { }

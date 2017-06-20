@@ -112,4 +112,18 @@ export class Data {
       });
     })
   }
+
+  //获取运动列表
+  getSportList() {
+    return new Promise((resolve, reject) => {
+      this.http.get(' http://localhost:3000/sport_list').subscribe(res => {
+        this.data = res.json();
+        resolve(this.data);
+      }, err => {
+        reject(err);
+      });
+    })
+  }
+
+
 }
