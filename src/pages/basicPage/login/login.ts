@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { JAlertProvider } from "../../providers/j-alert/j-alert";
+import { JAlertProvider } from "../../../providers/j-alert/j-alert";
 
 /**
  * Generated class for the LoginPage page.

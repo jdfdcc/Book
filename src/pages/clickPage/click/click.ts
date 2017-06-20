@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
-import { JAlertProvider } from "../../providers/j-alert/j-alert";
-import { DbServiceProvider } from "../../providers/db-service/db-service";
-import { ClickiPoperComponent } from "../../components/clicki-poper/clicki-poper";
-import { DateUtilsProvider } from "../../providers/date-utils/date-utils";
+import { JAlertProvider } from "../../../providers/j-alert/j-alert";
+import { DbServiceProvider } from "../../../providers/db-service/db-service";
+import { ClickiPoperComponent } from "../../../components/clicki-poper/clicki-poper";
+import { DateUtilsProvider } from "../../../providers/date-utils/date-utils";
 /**
  * Generated class for the ClickPage page.
  *

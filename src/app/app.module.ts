@@ -9,18 +9,11 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
 import { SQLite } from '@ionic-native/sqlite';
 //providers
-import { AppGlobal } from '../providers/app-global/app-global'
-import { Data } from '../providers/data/data';
-import { JAlertProvider } from '../providers/j-alert/j-alert';
-import { DbServiceProvider } from '../providers/db-service/db-service';
-import { DateUtilsProvider } from '../providers/date-utils/date-utils';
-import { UtilsProvider } from '../providers/utils/utils';
+import { ProvidersModule } from "../providers/providers.module";
 //directives or components
 import { ComponentsModule } from "../components/components.module";
 //pipes
 import { PipesModule } from "../pipes/pipes.module";
-import { StorageService } from '../providers/storage-service/storage-service';
-// import { Welcome } from "../pages/welcome/welcome";
 //使用httpModel
 import { HttpModule } from '@angular/http';
 
@@ -39,6 +32,8 @@ import { HttpModule } from '@angular/http';
     PipesModule,
     //存放所有控件集合
     ComponentsModule,
+    //所有providers
+    ProvidersModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: '' // 配置返回按钮的文字  
     }),
@@ -50,17 +45,9 @@ import { HttpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    AppGlobal,
     Camera,
-    Data,
-    JAlertProvider,
-    DbServiceProvider,
     SQLite,
-    DateUtilsProvider,
-    StorageService,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    UtilsProvider,
-    UtilsProvider,
   ]
 })
 export class AppModule { }

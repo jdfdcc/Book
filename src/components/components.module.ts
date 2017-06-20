@@ -11,10 +11,8 @@ import { ShowMsgComponent } from './show-msg/show-msg';
   declarations: [ClickiPoperComponent,ShowMsgComponent],
   exports: [ClickiPoperComponent,ShowMsgComponent],
   imports: [
-    // required if the custom component uses ion-icon or other funky ionic business
     IonicPageModule.forChild(ClickiPoperComponent), 
     IonicPageModule.forChild(ShowMsgComponent), 
-    
   ]
 })
 export class ComponentsModule {
