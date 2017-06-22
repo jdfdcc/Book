@@ -1,0 +1,46 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+
+/**
+ * Generated class for the WelcomePage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+@IonicPage()
+@Component({
+  selector: 'page-welcome',
+  templateUrl: 'welcome.html',
+})
+export class WelcomePage {
+  @ViewChild(Slides) slides: Slides;
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private storage: Storage) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad WelcomePage');
+  }
+
+  /**
+   * 页面滑动
+   */
+  slideChanged() {
+    let currentIndex = this.slides.getActiveIndex(), length = this.slides.length();
+    if (currentIndex === length) {
+      // this.toMain();
+    }
+  }
+  /**
+   * 跳转至主页
+   */
+  toMain() {
+    this.navCtrl.push('TabsPage')
+  }
+
+}

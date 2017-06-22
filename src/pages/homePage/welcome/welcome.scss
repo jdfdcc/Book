@@ -1,0 +1,46 @@
+page-welcome {
+    .we_btn {
+        position: absolute;
+        bottom: 50px;
+        width: 30%;
+        left: 35%;
+    }
+    .slide_01 {
+        background: url('../assets/bg-img/slide2.jpeg')
+    }
+    .slide_02 {
+        background: url('../assets/bg-img/slide1.jpeg')
+    }
+    .slide_03 {
+        background: url('../assets/bg-img/slide3.jpeg')
+    }
+    p {
+        color: rgb(0, 0, 0);
+        font-family: serif;
+        padding: 30px;
+        position: absolute;
+        top: 30%;
+        animation: in_out 1s linear;
+        -webkit-animation: in_out 1s linear;
+    }
+    @-webkit-keyframes in_out {
+        from {
+            opacity: 0;
+            top: 0px;
+        }
+        to {
+            opacity: 1;
+            top: 30%;
+        }
+    }
+    @keyframes in_out {
+        from {
+            opacity: 0;
+            top: 0px;
+        }
+        to {
+            opacity: 1;
+            top: 30%;
+        }
+    }
+}

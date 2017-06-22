@@ -8,20 +8,21 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = 'TabsPage';
+  // rootPage: any = 'TabsPage';
+  rootPage: any = 'WelcomePage';
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage) {
-    // storage.get('firstIn').then((result) => {
-    //   if (result) {
-    //     this.rootPage = "Welcome";
-    //   }
-    //   else {
-    //     storage.set('firstIn', true);
-    //     this.rootPage = 'ClickPage';
-    //   }
-    //   setTimeout(function () {
-    //     splashScreen.hide();
-    //   }, 1000);
-    // });
+    storage.get('firstIn').then((result) => {
+      if (result) {
+        this.rootPage = "WelcomePage";
+      }
+      else {
+        storage.set('firstIn', true);
+        this.rootPage = 'TabsPage';
+      }
+      setTimeout(function () {
+        splashScreen.hide();
+      }, 1000);
+    });
     platform.ready().then(() => {
       // statusBar.styleDefault();
       statusBar.backgroundColorByName("white");

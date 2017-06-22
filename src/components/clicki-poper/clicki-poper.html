@@ -1,5 +1,12 @@
 <ion-list>
     <ion-item tappable *ngFor="let item of dataList" (click)="chooseItem(item)">
+        <ion-icon name="{{item.icon}}" item-start color="life"></ion-icon>
         {{item.text}}
     </ion-item>
 </ion-list>
+<!--<ion-scroll>
+    <div class="scroll_item" *ngFor="let item of dataList" (click)="chooseItem(item)">
+        <ion-icon name="{{item.icon}}" item-start color="life"></ion-icon>
+        <span>{{item.text}}</span>
+    </div>
+</ion-scroll>-->

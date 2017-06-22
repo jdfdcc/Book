@@ -1,3 +1,13 @@
 clicki-poper {
-
+    .list-ios {
+        margin: 0px!important;
+    }
+    .scroll_item {
+        min-height: 30px;
+        line-height: 30px;
+        margin: 5px;
+        ion-icon {
+            font-size: 2.2rem;
+        }
+    }
 }

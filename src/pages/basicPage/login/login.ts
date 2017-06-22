@@ -30,7 +30,7 @@ export class LoginPage {
    */
   toLogin() {
     if (this.name === "admin" && this.password === "123456") {
-      this.navCtrl.push("ClickPage");
+      this.navCtrl.push("TabsPage");
     } else {
       this.Jalert.alertMsg(['用户名或者密码不正确！'])
     }
