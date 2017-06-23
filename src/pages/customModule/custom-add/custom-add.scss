@@ -1,3 +1,30 @@
 page-custom-add {
-
+    font-size: 1.5rem;
+    .title_msg {
+        min-height: 30px;
+        line-height: 30px;
+        padding: 10px 50px;
+        color: green;
+    }
+    .head_img {
+        text-align: center; // line-height: 200px;
+        min-height: 200px;
+        background: url('../assets/img/bg-img/head.png');
+        background-size: 100% 100%;
+        padding-top: 30px;
+        div {
+            width: 120px;
+            height: 120px;
+            margin-left: 35%;
+            border: 3px solid green;
+            padding: 12px;
+            border-radius: 50%;
+            ion-icon {
+                font-size: 8rem;
+            }
+        }
+    }
+    .text-input {
+        text-align: right;
+    }
 }

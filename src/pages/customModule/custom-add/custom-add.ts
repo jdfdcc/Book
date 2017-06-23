@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Data } from "../../../providers/json-data/data";
 
 /**
  * Generated class for the CustomAddPage page.
@@ -13,12 +14,41 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'custom-add.html',
 })
 export class CustomAddPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  personObj: Object = {
+    fleet: ""
+  };
+  fleetCode: Array<any> = [];
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private data: Data) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CustomAddPage');
+  }
+  /**
+   * 即将进入页面
+   */
+  ionViewWillEnter() {
+    let that = this;
+    //获取码表
+    this.data.getCode().then((data: any) => {
+      that.fleetCode = data.fleetCode;
+    })
+  }
+  /**
+   * 上传头像接口
+   */
+  uploadHeard() {
+    console.log("敬请期待");
   }
 
+
+
+  /**
+   * 保存数据
+   */
+  save() {
+    console.log(this.personObj);
+  }
 }

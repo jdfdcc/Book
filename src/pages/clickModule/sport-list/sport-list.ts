@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DbServiceProvider } from "../../../providers/db-service/db-service";
-import { Data } from "../../../providers/data/data";
+import { Data } from "../../../providers/json-data/data";
 import { UtilsProvider } from "../../../providers/utils/utils";
 
 /**
