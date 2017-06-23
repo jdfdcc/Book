@@ -9,14 +9,13 @@ import { Storage } from '@ionic/storage';
 })
 export class MyApp {
   // rootPage: any = 'TabsPage';
-  rootPage: any = 'WelcomePage';
+  rootPage: any = '';
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage) {
     storage.get('firstIn').then((result) => {
       if (result) {
         this.rootPage = "WelcomePage";
       }
       else {
-        storage.set('firstIn', true);
         this.rootPage = 'TabsPage';
       }
       setTimeout(function () {

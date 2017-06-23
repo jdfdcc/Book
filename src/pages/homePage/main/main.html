@@ -19,7 +19,34 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-scroll scrollX style="height:40px;">
-    </ion-scroll>
+<ion-content>
+    <!--<ion-scroll scrollX style="height:40px;">
+    </ion-scroll>-->
+
+    <ion-card *ngFor="let item of personList">
+
+        <img src="assets/one-piece/{{item.heard_img}}" />
+
+        <ion-card-content>
+            <ion-card-title>
+                {{item.name}}
+            </ion-card-title>
+            <p>
+                {{item.introduction}}
+            </p>
+        </ion-card-content>
+
+        <ion-item>
+            <ion-icon name='ios-bonfire' item-start style="color: #d03e84"></ion-icon>
+            魅力指数
+            <ion-badge item-end color="life">{{item.charmNum}}</ion-badge>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name='ios-cog' item-start style="color: #55acee"></ion-icon>
+            能力
+            <ion-badge item-end color="life">{{item.ability}}</ion-badge>
+        </ion-item>
+
+    </ion-card>
 </ion-content>

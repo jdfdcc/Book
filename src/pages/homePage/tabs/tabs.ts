@@ -21,11 +21,9 @@ export class TabsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     navCtrl.swipeBackEnabled = false;
   }
-
   ionViewWillEnter() {
     this.navCtrl.swipeBackEnabled = false;
   }
-  ionView
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
     this.navCtrl.swipeBackEnabled = false;

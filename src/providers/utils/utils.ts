@@ -17,6 +17,7 @@ export class UtilsProvider {
    * 判断是否为Web模式
    */
   isWeb() {
-    return (this.platform.is("ios") || this.platform.is("andorid")) && !this.platform.is("mobileweb");
+    // (this.platform.is("ios") || this.platform.is("andorid")) && !this.platform.is("mobileweb")
+    return false;
   }
 }

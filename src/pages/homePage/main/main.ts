@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,PopoverController ,App} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController, App } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ClickiPoperComponent } from "../../../components/clicki-poper/clicki-poper";
 
@@ -18,11 +18,12 @@ export class MainPage {
   isAndroid: boolean = true;
   tabsList: Array<any> = [];
   choosed: string = 'home';
+  personList: Array<any> = [];
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private statusBar: StatusBar,
-    private popoverCtrl:PopoverController,
-    private app:App) {
+    private popoverCtrl: PopoverController,
+    private app: App) {
     navCtrl.swipeBackEnabled = false;
     this.tabsList = [{
       id: "home", text: "首页"
@@ -36,7 +37,21 @@ export class MainPage {
       id: "design", text: "设计"
     }, {
       id: "read", text: "阅读"
-    }]
+    }];
+    //人物列表
+    this.personList = [{
+      name: "佩罗娜",
+      introduction: "“幽灵公主”佩罗娜是漫画作品《海贼王》中的角色。佩罗娜是王下七武海月光·莫利亚的干部之一、恐怖咆哮三怪人之一、动物僵尸与吓人僵尸的指挥官。两年后为索隆送行，继续与鹰眼米霍克一起在克拉伊咖那岛居住。",
+      charmNum: "10",
+      ability: "100",
+      heard_img:"1.jpg"
+    },{
+      name: "罗罗诺亚·索隆",
+      introduction: "草帽海贼团中的三大战斗力之一，使用三把刀战斗的三刀流剑士，二年前超新星11人之一。爱喝酒，爱睡觉，讲义气，但却很路痴。和山治是死对头。为了小时候与古伊娜的约定而踏上了前往世界第一剑士的道路，随后成为主角蒙奇·D·路飞的第一个伙伴。在初次败给世界第一剑士“鹰眼米霍克”后向路飞发誓永不再败，并且更加努力的锻炼自己。在鹰眼的帮助训练下，两年后的他成功与伙伴们汇合，并且为了实现自己的梦想，奔赴强者如云的新世界。",
+      charmNum: "10",
+      ability: "100",
+      heard_img:"2.png"
+    }];
 
   }
 
@@ -49,6 +64,7 @@ export class MainPage {
    * 将要离开的时候
    */
   ionViewWillLeave() {
+    console.log("I,m leaving")
     this.statusBar.backgroundColorByName("white");
   }
   /**
@@ -70,7 +86,15 @@ export class MainPage {
     // this.alert.alert("小猿们正在努力开发中...");
     let popover = this.popoverCtrl.create(ClickiPoperComponent, {
       dataList: [{
-        id: "1", text: "打卡", url: "ClickPage",icon:"md-alarm"
+        id: "1", text: "创建群聊", url: "ClickPage", icon: "ios-people-outline"
+      }, {
+        id: "1", text: "新增客户", url: "CustomAddPage", icon: "ios-person-add-outline"
+      }, {
+        id: "1", text: "拍摄", url: "ClickPage", icon: "ios-reverse-camera-outline"
+      }, {
+        id: "1", text: "面对面快传", url: "ClickPage", icon: "ios-paper-outline"
+      }, {
+        id: "1", text: "打卡", url: "ClickPage", icon: "ios-settings-outline"
       }], callback: callbck
     });
     popover.present({

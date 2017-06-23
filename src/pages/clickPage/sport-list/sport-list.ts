@@ -36,7 +36,7 @@ export class SportListPage {
    * @param {obj}刷新或者加载更多对象
    */
   searchSportList(obj) {
-    if (this.utilsProvider.isWeb) {
+    if (this.utilsProvider.isWeb()) {
       let that = this;
       // this.searchSportList(null);
       that.dateService.getSportList().then(function (res: Array<any>) {

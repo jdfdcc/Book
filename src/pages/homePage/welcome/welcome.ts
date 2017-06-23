@@ -40,6 +40,7 @@ export class WelcomePage {
    * 跳转至主页
    */
   toMain() {
+    this.storage.set('firstIn', false);
     this.navCtrl.push('TabsPage')
   }
 
