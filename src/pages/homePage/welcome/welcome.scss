@@ -20,8 +20,8 @@ page-welcome {
         padding: 30px;
         position: absolute;
         top: 30%;
-        animation: in_out 1s linear;
-        -webkit-animation: in_out 1s linear;
+        // animation: in_out 1s linear;
+        // -webkit-animation: in_out 1s linear;
     }
     @-webkit-keyframes in_out {
         from {

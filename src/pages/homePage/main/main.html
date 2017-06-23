@@ -13,7 +13,7 @@
         </ion-scroll>
         <ion-buttons end style="min-width: 43px;text-align: center;">
             <button (click)="openMenu($event)" ion-button icon-only color="life">
-             <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
+             <ion-icon ios="ios-add-outline" md="ios-add-outline"></ion-icon>
             </button>
         </ion-buttons>
     </ion-toolbar>
@@ -22,10 +22,9 @@
 <ion-content>
     <!--<ion-scroll scrollX style="height:40px;">
     </ion-scroll>-->
-
     <ion-card *ngFor="let item of personList">
 
-        <img src="assets/one-piece/{{item.heard_img}}" />
+        <img class="animated linear bounceInDown" src="assets/one-piece/{{item.heard_img}}" />
 
         <ion-card-content>
             <ion-card-title>

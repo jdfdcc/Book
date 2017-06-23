@@ -99,13 +99,13 @@ export class ClickPage {
     // this.alert.alert("小猿们正在努力开发中...");
     let popover = this.popoverCtrl.create(ClickiPoperComponent, {
       dataList: [{
-        id: "1", text: "运动列表", url: "SportListPage",icon:"ios-football-outline"
+        id: "1", text: "运动列表", url: "SportListPage", icon: "ios-football-outline"
       }, {
-        id: "2", text: "Error页面", url: "ErrorPage",icon:"ios-bug-outline"
+        id: "2", text: "Error页面", url: "ErrorPage", icon: "ios-bug-outline"
       }, {
-        id: "3", text: "云页面", url: "CloudPage",icon:"ios-thunderstorm-outline"
+        id: "3", text: "云页面", url: "CloudPage", icon: "ios-thunderstorm-outline"
       }, {
-        id: "4", text: "登陆", url: "LoginPage",icon:"ios-person-outline"
+        id: "4", text: "登陆", url: "LoginPage", icon: "ios-person-outline"
       }], callback: callbck
     });
     popover.present({
