@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Data } from "../../../providers/json-data/data";
+import { NativeKeyboard } from '@ionic-native/native-keyboard';
 
 /**
  * Generated class for the CustomAddPage page.
@@ -17,11 +18,13 @@ export class CustomAddPage {
   personObj: Object = {
     fleet: ""
   };
+  // inputS:Array<any> = [1,23,5,5,5,5,5,5,55,,5,5,5,5,5,5,5,5,5,5,5,5,2,5];
   fleetCode: Array<any> = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private data: Data) {
+    private data: Data,
+    private nativeKeyboard: NativeKeyboard) {
   }
 
   ionViewDidLoad() {

@@ -98,6 +98,7 @@ export class ClickPage {
     // });
     // this.alert.alert("小猿们正在努力开发中...");
     let popover = this.popoverCtrl.create(ClickiPoperComponent, {
+      navCtrl: this.navCtrl,
       dataList: [{
         id: "1", text: "运动列表", url: "SportListPage", icon: "ios-football-outline"
       }, {
@@ -106,23 +107,11 @@ export class ClickPage {
         id: "3", text: "云页面", url: "CloudPage", icon: "ios-thunderstorm-outline"
       }, {
         id: "4", text: "登陆", url: "LoginPage", icon: "ios-person-outline"
-      }], callback: callbck
+      }]
     });
     popover.present({
       ev: $event
     });
-
-    popover.onWillDismiss((value) => {
-
-    });
-    //回调函数
-    function callbck(item) {
-      navCtrl.push(item.url, {}, {
-        animate: true,
-        animation: "md-transition"
-      });
-      popover.dismiss();
-    }
   }
   /**
    * 时间开始计时或者停止

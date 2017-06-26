@@ -1,11 +1,16 @@
 <ion-header>
     <ion-navbar color="life">
         <ion-title>新增客户</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="ds($event)">
+                <ion-icon name="more"></ion-icon>
+             </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 <ion-content>
     <section class="head_img">
-        <div tappable (click)="uploadHeard()">
+        <div (click)="uploadHeard()">
             <ion-icon color="life" name="camera"></ion-icon>
         </div>
     </section>
@@ -14,7 +19,7 @@
     </div>
     <ion-list>
         <ion-item>
-            <ion-label fixed>名称</ion-label>
+            <ion-label fixed>名称{{i}}</ion-label>
             <ion-input type="text" placeholder="请输入姓名"></ion-input>
         </ion-item>
 
@@ -25,7 +30,55 @@
                 <ion-option color="life" *ngFor="let item of fleetCode" [value]="item.code">{{item.name}}</ion-option>
             </ion-select>
         </ion-item>
+        <ion-item>
+            <ion-label>职位</ion-label>
+            <ion-select [(ngModel)]="personObj.fleet" cancelText="取消" okText="确定">
+                <ion-option value="">请选择</ion-option>
+                <ion-option color="life" *ngFor="let item of fleetCode" [value]="item.code">{{item.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <div class="title_msg" style="border-bottom: 0.55px solid rgb(200, 199, 204);">
+            <ion-icon name="ios-flame"></ion-icon> 魅力
+        </div>
+        <ion-item style="padding-left:0px">
+            <ion-range min="0" max="100" [(ngModel)]="saturation" color="secondary">
+                <ion-label range-left>人气</ion-label>
+                <ion-label range-right>{{saturation}}分</ion-label>
+            </ion-range>
+        </ion-item>
+        <ion-item style="padding-left:0px">
+            <ion-range min="0" max="100" [(ngModel)]="saturation" color="secondary">
+                <ion-label range-left>战力</ion-label>
+                <ion-label range-right>{{saturation}}分</ion-label>
+            </ion-range>
+        </ion-item>
+        <ion-item>
+            <ion-label range-left>介绍</ion-label>
+            <ion-textarea placeholder="个人简介"></ion-textarea>
+        </ion-item>
     </ion-list>
 
-    <button ion-button (click)="save()">提交</button>
+    <!--<br/><input type="text" value="regular input" maxlength="15" style="font-size:13px; font-family:Helvetica; font-style:italic" /><br/><br/>
+
+    <br/><input data-nativekeyboard="true" type="text" value="max 15 chars" maxlength="15" style="font-size:13px; font-family:Helvetica; font-style:italic" /><br/><br/>
+
+    <br/><input data-nativekeyboard='{"type":"decimal", "maxlength":4}' type="text" value="100" style="font-family: Verdana; font-size:15px; font-weight: bold" /><br/><br/>
+
+    <br/><input data-nativekeyboard='{"type":"numbersandpunctuation", "accessorybar":{}}' type="number" value="200" style="font-family: Verdana; font-size:15px; font-weight: bold" /><br/><br/>
+
+    <br/><input data-nativekeyboard='{"type":"decimal"}' type="text" value="19.95" style="font-family: Arial; font-size:15px; font-weight: bold" /><br/><br/>
+
+    <br/><input data-nativekeyboard='configureNativeKeyboard("#FF0000")' type="tel" value="+31650123456" style="font-family: Arial; font-size:15px; font-weight: bold" /><br/><br/>
+
+    <br/><input data-nativekeyboard='configureNativeKeyboard' type="email" value="sergey@google.com" style="font-family: Arial; font-size:12px; font-weight: normal" /><br/><br/>
+
+    <br/><input data-nativekeyboard='{"type":"twitter"}' type="text" value="@eddyverbruggen" style="font-family: Arial; font-size:12px; font-weight: normal; color: #FF0000" /><br/><br/>
+
+    <br/><textarea data-nativekeyboard='{}' style="font-size:15px; font-family:Helvetica; font-weight: bold; border-radius:0">Helvetica</textarea><br/><br/>
+
+    <br/><textarea data-nativekeyboard='{}' style="font-size:15px; font-family:Arial; border-radius:5px">Arial, with border radius</textarea><br/><br/>-->
+
+    <section class="end_btn">
+        <button ion-button color="life" (click)="save()">提交</button>
+    </section>
 </ion-content>

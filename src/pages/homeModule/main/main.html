@@ -3,11 +3,12 @@
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
+  tappable
 -->
 <ion-header>
     <ion-toolbar>
         <ion-scroll scrollbar-x="false" scrollX scrollbar-y="false" scrollY="false">
-            <div tappable class="scroll-item" [ngClass]="{'choosed':choosed === item.id}" (click)="chooseTab(item)" *ngFor="let item of tabsList">
+            <div class="scroll-item" [ngClass]="{'choosed':choosed === item.id}" (click)="chooseTab(item)" *ngFor="let item of tabsList">
                 {{item.text}}
             </div>
         </ion-scroll>
@@ -37,13 +38,13 @@
 
         <ion-item>
             <ion-icon name='ios-bonfire' item-start style="color: #d03e84"></ion-icon>
-            魅力指数
+            人气
             <ion-badge item-end color="life">{{item.charmNum}}</ion-badge>
         </ion-item>
 
         <ion-item>
             <ion-icon name='ios-cog' item-start style="color: #55acee"></ion-icon>
-            能力
+            战斗力
             <ion-badge item-end color="life">{{item.ability}}</ion-badge>
         </ion-item>
 

@@ -17,6 +17,10 @@ import { PipesModule } from "../pipes/pipes.module";
 //使用httpModel
 import { HttpModule } from '@angular/http';
 
+import { Keyboard } from "@ionic-native/keyBoard";
+
+import { NativeKeyboard } from '@ionic-native/native-keyboard';
+
 
 
 //基础模块
@@ -38,19 +42,21 @@ import { HttpModule } from '@angular/http';
       platforms: {
         android: {
           backButtonText: "",
-          backButtonIcon: "md-arrow-back",
-          iconMode: "md",
-          modalEnter: "modal-md-slide-in",
-          modalLeave: "modal-md-slide-out",
-          pageTransition: "md",
+          // backButtonIcon: "md-arrow-back",
+          // iconMode: "md",
+          // modalEnter: "modal-md-slide-in",
+          // modalLeave: "modal-md-slide-out",
+          // pageTransition: "md",
         },
         ios: {
           backButtonText: "",
-          backButtonIcon: "ios-arrow-back",
-          iconMode: "ios",
-          modalEnter: "modal-ios-slide-in",
-          modalLeave: "modal-ios-slide-out",
-          pageTransition: "ios",
+          // backButtonIcon: "ios-arrow-back",
+          // iconMode: "ios",
+          // modalEnter: "modal-ios-slide-in",
+          // modalLeave: "modal-ios-slide-out",
+          // pageTransition: "ios",
+          mode: "ios",
+          tabsHideOnSubPages: "true"
         }
       }
     })
@@ -62,6 +68,8 @@ import { HttpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
+    Keyboard,
+    NativeKeyboard,
     Camera,
     SQLite,
     { provide: ErrorHandler, useClass: IonicErrorHandler },

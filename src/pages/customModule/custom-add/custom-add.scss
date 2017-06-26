@@ -1,14 +1,26 @@
 page-custom-add {
+    ion-item {
+        border-bottom: 0.55px solid rgb(200, 199, 204)!important;
+        .item-inner {
+            border-bottom: none!important;
+        }
+    }
     font-size: 1.5rem;
     .title_msg {
         min-height: 30px;
         line-height: 30px;
         padding: 10px 50px;
         color: green;
+        ion-icon {
+            position: absolute;
+            left: 10px;
+            margin-top: -3px;
+            font-size: 3.5rem;
+        }
     }
     .head_img {
-        text-align: center; // line-height: 200px;
-        min-height: 200px;
+        text-align: center; // line-height: 180px;
+        min-height: 180px;
         background: url('../assets/img/bg-img/head.png');
         background-size: 100% 100%;
         padding-top: 30px;
@@ -24,7 +36,24 @@ page-custom-add {
             }
         }
     }
-    .text-input {
-        text-align: right;
+    // .text-input {
+    //     text-align: right;
+    // }
+    ion-textarea {
+        min-height: 180px;
+        textarea {
+            border: 0.55px solid rgb(200, 199, 204)!important;
+            height: 130px;
+            padding: 5px!important;
+            border-radius: 10px!important;
+            text-align: left!important;
+        }
+    }
+    .end_btn {
+        text-align: center;
+        padding-bottom: 20px;
+        button {
+            min-width: 180px;
+        }
     }
 }
