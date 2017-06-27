@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewController, App, NavController } from 'ionic-angular';
+import { ViewController, App } from 'ionic-angular';
 
 /**
  * Generated class for the ClickiPoperComponent component.
@@ -16,7 +16,7 @@ export class ClickiPoperComponent {
   textEle: any;
   selected: any;
   dataList: any;
-  navCtrl: NavController;
+  navCtrl: any;
   constructor(
     private viewCtrl: ViewController,
     // public navCtrl: NavController,
@@ -44,21 +44,8 @@ export class ClickiPoperComponent {
    */
   chooseItem(item) {
     this.viewCtrl.dismiss(item);
-    this.navCtrl.push(item.url);
-    // this.app.getRootNav().push(item.url, {}, {
-    //   animate: true,
-    //   animation: "md-transition"
-    // });
-    // let elements = document.querySelectorAll(".tabbar");
-    // if (elements != null) {
-    //   Object.keys(elements).map((key) => {
-    //     elements[key].style.display = 'none';
-    //   });
-    // }
-    // this.app.getRootNav().push(item.url);
-    // this.selected = selectedItem;
-    // this.viewCtrl.data.callback(selectedItem);
   }
+
 
 }
 

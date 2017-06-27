@@ -9,7 +9,7 @@
     <ion-toolbar>
         <ion-scroll scrollbar-x="false" scrollX scrollbar-y="false" scrollY="false">
             <div class="scroll-item" [ngClass]="{'choosed':choosed === item.id}" (click)="chooseTab(item)" *ngFor="let item of tabsList">
-                {{item.text}}
+                <span tappable>{{item.text}}</span>
             </div>
         </ion-scroll>
         <ion-buttons end style="min-width: 43px;text-align: center;">

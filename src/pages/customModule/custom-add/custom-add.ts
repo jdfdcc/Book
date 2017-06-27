@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Data } from "../../../providers/json-data/data";
 import { NativeKeyboard } from '@ionic-native/native-keyboard';
-
 /**
  * Generated class for the CustomAddPage page.
  *
@@ -45,9 +44,6 @@ export class CustomAddPage {
   uploadHeard() {
     console.log("敬请期待");
   }
-
-
-
   /**
    * 保存数据
    */

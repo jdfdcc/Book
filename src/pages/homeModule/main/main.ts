@@ -101,13 +101,14 @@ export class MainPage {
    * dia
    */
   openMenu($event) {
+    let that = this;
     // let popover = this.popoverCtrl.create(PopoverPage, {
     //   contentEle: this.content.nativeElement,
     //   textEle: this.text.nativeElement
     // });
 
     let popover = this.popoverCtrl.create(ClickiPoperComponent, {
-      navCtrl:this.navCtrl,
+      navCtrl: this.navCtrl,
       dataList: [{
         id: "1", text: "创建群聊", url: "ClickPage", icon: "ios-people-outline"
       }, {
@@ -121,7 +122,18 @@ export class MainPage {
       }]
     });
     popover.present({
-      ev: $event
+      ev: $event,
+      isNavRoot: true,
+      updateUrl: true,
+      disableApp: true,
+      direction: "y",
+      duration: 0,
+      easing: "fasle",
+      animate: false,
+      progressAnimation:false
+    });
+    popover.onWillDismiss(function (item) {
+      that.navCtrl.push(item.url);
     });
   }
 

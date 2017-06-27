@@ -92,7 +92,6 @@ export class ClickPage {
    * 更多功能展示
    */
   presentPopover($event) {
-    let navCtrl = this.navCtrl;
     // this.DBService.query((list) => {
     //   console.log(list);
     // });
@@ -110,7 +109,8 @@ export class ClickPage {
       }]
     });
     popover.present({
-      ev: $event
+      ev: $event,
+      isNavRoot: true
     });
   }
   /**
