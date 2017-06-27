@@ -20,7 +20,7 @@ export class Data {
    */
   getCode() {
     return new Promise((resolve, reject) => {
-      this.http.get('../assets/json/code.json').subscribe(res => {
+      this.http.get('assets/json/code.json').subscribe(res => {
         this.data = res.json();
         resolve(this.data);
       }, err => {

@@ -2,15 +2,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-//native
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { IonicStorageModule } from '@ionic/storage';
-import { Camera } from '@ionic-native/camera';
-import { SQLite } from '@ionic-native/sqlite';
 //providers
 import { ProvidersModule } from "../providers/providers.module";
-//directives or components
+//components
 import { ComponentsModule } from "../components/components.module";
 //pipes
 import { PipesModule } from "../pipes/pipes.module";
@@ -21,12 +15,24 @@ import { Keyboard } from "@ionic-native/keyBoard";
 
 import { NativeKeyboard } from '@ionic-native/native-keyboard';
 
+//directives or 
+
+//native
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { IonicStorageModule } from '@ionic/storage';
+import { Camera } from '@ionic-native/camera';
+import { SQLite } from '@ionic-native/sqlite';
+import { Contacts } from "@ionic-native/contacts";
+
+
 
 
 //基础模块
 @NgModule({
   declarations: [
     MyApp,
+    
   ],
   imports: [
     HttpModule,
@@ -49,7 +55,7 @@ import { NativeKeyboard } from '@ionic-native/native-keyboard';
           // pageTransition: "md",
         },
         ios: {
-          backButtonText: "",
+          backButtonText: "返回",
           // backButtonIcon: "ios-arrow-back",
           // iconMode: "ios",
           // modalEnter: "modal-ios-slide-in",
@@ -72,6 +78,7 @@ import { NativeKeyboard } from '@ionic-native/native-keyboard';
     NativeKeyboard,
     Camera,
     SQLite,
+    Contacts,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })

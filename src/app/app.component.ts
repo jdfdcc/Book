@@ -7,6 +7,7 @@ import { NativeKeyboard } from '@ionic-native/native-keyboard';
 
 import { Keyboard } from "@ionic-native/keyBoard";
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -30,8 +31,8 @@ export class MyApp {
       // statusBar.styleDefault();
       statusBar.overlaysWebView(true);
       statusBar.backgroundColorByName("white");
-      keyboard.disableScroll(false);
-      keyboard.hideKeyboardAccessoryBar(false);
+      // keyboard.disableScroll(false);
+      // keyboard.hideKeyboardAccessoryBar(false);
       //初始化数据信息
       // sqLite.create({
       //   name: 'data.db',

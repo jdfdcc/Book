@@ -1,14 +1,14 @@
 <ion-header>
-    <ion-navbar color="life">
+    <ion-navbar color="life" [hearBarColor]="'life'">
         <ion-title>新增客户</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only (click)="ds($event)">
-                <ion-icon name="more"></ion-icon>
+            <button ion-button icon-only (click)="addCusFromContacts()">
+                添加
              </button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content ElasticHeader>
     <section class="head_img">
         <div (click)="uploadHeard()">
             <ion-icon color="life" name="camera"></ion-icon>
@@ -19,8 +19,13 @@
     </div>
     <ion-list>
         <ion-item>
-            <ion-label fixed>名称{{i}}</ion-label>
-            <ion-input type="text" placeholder="请输入姓名"></ion-input>
+            <ion-label fixed>名称</ion-label>
+            <ion-input type="text" placeholder="姓名"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>手机</ion-label>
+            <ion-input type="tel" placeholder="手机号码"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -32,9 +37,9 @@
         </ion-item>
         <ion-item>
             <ion-label>职位</ion-label>
-            <ion-select [(ngModel)]="personObj.fleet" cancelText="取消" okText="确定">
+            <ion-select [(ngModel)]="personObj.job" cancelText="取消" okText="确定">
                 <ion-option value="">请选择</ion-option>
-                <ion-option color="life" *ngFor="let item of fleetCode" [value]="item.code">{{item.name}}</ion-option>
+                <ion-option color="life" *ngFor="let item of jobCode" [value]="item.code">{{item.name}}</ion-option>
             </ion-select>
         </ion-item>
         <div class="title_msg" style="border-bottom: 0.55px solid rgb(200, 199, 204);">

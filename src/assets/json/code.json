@@ -5,5 +5,26 @@
     }, {
         "name": "红发海贼团",
         "code": "redHair"
-    }]
+    }],
+    "jobCode": [{
+            "name": "船长",
+            "code": "captain"
+        },
+        {
+            "name": "副船长",
+            "code": "seCaptain"
+        },
+        {
+            "name": "战斗员",
+            "code": "fight"
+        },
+        {
+            "name": "狙击手",
+            "code": "snipe"
+        },
+        {
+            "name": "舵手",
+            "code": "helm"
+        }
+    ]
 }

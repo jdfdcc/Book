@@ -44,8 +44,7 @@ export class ClickiPoperComponent {
    */
   chooseItem(item) {
     this.viewCtrl.dismiss(item);
+    this.navCtrl.push(item.url);
   }
-
-
 }
 

@@ -80,14 +80,17 @@ export class MainPage {
   ionViewWillEnter() {
     console.log('ionViewDidLoad MainPage');
     this.statusBar.styleDefault();
-    this.navCtrl.swipeBackEnabled = false;
+    // this.statusBar.overlaysWebView(false);
+    // this.statusBar.backgroundColorByName("black");
+    // #0F0F0F
+    // this.statusBar.backgroundColorByHexString('#0F0F0F');
   }
   /**
    * 将要离开的时候
    */
   ionViewWillLeave() {
     console.log("I,m leaving")
-    this.statusBar.backgroundColorByName("white");
+    this.statusBar.styleLightContent();
   }
   /**
    * 选择tab
@@ -122,19 +125,12 @@ export class MainPage {
       }]
     });
     popover.present({
-      ev: $event,
-      isNavRoot: true,
-      updateUrl: true,
-      disableApp: true,
-      direction: "y",
-      duration: 0,
-      easing: "fasle",
-      animate: false,
-      progressAnimation:false
+      ev: $event
     });
-    popover.onWillDismiss(function (item) {
-      that.navCtrl.push(item.url);
-    });
+    //即将消失的时候进行的操作
+    // popover.onWillDismiss(function (item) {
+    //   item && item.url && that.navCtrl.push(item.url);
+    // });
   }
 
 }
