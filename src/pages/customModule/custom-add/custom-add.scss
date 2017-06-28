@@ -1,11 +1,14 @@
 page-custom-add {
+    font-size: 1.5rem;
     ion-item {
         border-bottom: 0.55px solid rgb(200, 199, 204)!important;
         .item-inner {
             border-bottom: none!important;
         }
+        .text-input {
+            text-align: right;
+        }
     }
-    font-size: 1.5rem;
     .title_msg {
         min-height: 30px;
         line-height: 30px;
@@ -36,9 +39,6 @@ page-custom-add {
             }
         }
     }
-    // .text-input {
-    //     text-align: right;
-    // }
     ion-textarea {
         min-height: 180px;
         textarea {
@@ -55,5 +55,8 @@ page-custom-add {
         button {
             min-width: 180px;
         }
+    }
+    .input-cover {
+        position: static!important;
     }
 }

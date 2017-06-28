@@ -14,9 +14,6 @@ import { HttpModule } from '@angular/http';
 import { Keyboard } from "@ionic-native/keyBoard";
 
 import { NativeKeyboard } from '@ionic-native/native-keyboard';
-
-//directives or 
-
 //native
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,13 +23,15 @@ import { SQLite } from '@ionic-native/sqlite';
 import { Contacts } from "@ionic-native/contacts";
 
 
+// import { HearBarColorDirective } from "../directives/hear-bar-color/hear-bar-color";
+
 
 
 //基础模块
 @NgModule({
   declarations: [
     MyApp,
-    
+    // HearBarColorDirective
   ],
   imports: [
     HttpModule,
@@ -53,6 +52,7 @@ import { Contacts } from "@ionic-native/contacts";
           // modalEnter: "modal-md-slide-in",
           // modalLeave: "modal-md-slide-out",
           // pageTransition: "md",
+          tabsHideOnSubPages: "true"
         },
         ios: {
           backButtonText: "返回",

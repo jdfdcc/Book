@@ -1,4 +1,9 @@
 page-login {
+    ion-content {
+        // background-color: -webkit-linear-gradient( top, white 0%, green 100%);
+        background-image: url('../assets/img/bg-img/main_bg.png');
+        background-size: 100% 100%;
+    }
     .login {
         height: 100%;
         text-align: center;

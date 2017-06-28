@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JAlertProvider } from "../../../providers/j-alert/j-alert";
-
+import { HearBarColorDirective } from "../../../directives/hear-bar-color/hear-bar-color";
 /**
  * Generated class for the LoginPage page.
  *

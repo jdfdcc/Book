@@ -31,8 +31,10 @@ export class HearBarColorDirective {
 
   ngOnInit() {
     console.log("ngOnInit")
+     this.statusBar.styleDefault();
+  }
+  ngOnDestroy() {
     this.statusBar.styleLightContent();
   }
-
 
 }
