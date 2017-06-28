@@ -44,25 +44,20 @@ import { Contacts } from "@ionic-native/contacts";
     //所有providers
     ProvidersModule,
     IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: true,
+      backButtonText: "返回",
+      activator: "ripple",
+      modalEnter:"",
+      modalLeave:"",
       platforms: {
         android: {
-          backButtonText: "",
-          // backButtonIcon: "md-arrow-back",
-          // iconMode: "md",
-          // modalEnter: "modal-md-slide-in",
-          // modalLeave: "modal-md-slide-out",
-          // pageTransition: "md",
-          tabsHideOnSubPages: "true"
         },
         ios: {
-          backButtonText: "返回",
           // backButtonIcon: "ios-arrow-back",
-          // iconMode: "ios",
+          iconMode: "ios",
           // modalEnter: "modal-ios-slide-in",
           // modalLeave: "modal-ios-slide-out",
           // pageTransition: "ios",
-          mode: "ios",
-          tabsHideOnSubPages: "true"
         }
       }
     })

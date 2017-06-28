@@ -23,9 +23,9 @@
 <ion-content>
     <!--<ion-scroll scrollX style="height:40px;">
     </ion-scroll>-->
-    <ion-card *ngFor="let item of personList">
+    <ion-card *ngFor="let item of personList" (click)="toDetail(item)" tappable>
 
-        <img class="animated linear bounceInDown" src="assets/img/one-piece/{{item.heard_img}}" />
+        <img class="animated linear bounceInDown" src="{{item.imgUrl}}" />
 
         <ion-card-content>
             <ion-card-title>

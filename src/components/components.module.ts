@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core"
 import { IonicPageModule } from 'ionic-angular';
 import { ClickiPoperComponent } from './clicki-poper/clicki-poper';
 import { ShowMsgComponent } from './show-msg/show-msg';
-import { HearBarColorDirective } from "../directives/hear-bar-color/hear-bar-color";
 
 /**
  * 存放所有 Component的信息类
@@ -10,7 +9,7 @@ import { HearBarColorDirective } from "../directives/hear-bar-color/hear-bar-col
 
 @NgModule({
   declarations: [ClickiPoperComponent, ShowMsgComponent],
-  exports: [],
+  exports: [ClickiPoperComponent, ShowMsgComponent],
   imports: [
     IonicPageModule.forChild(ClickiPoperComponent),
     IonicPageModule.forChild(ShowMsgComponent),
