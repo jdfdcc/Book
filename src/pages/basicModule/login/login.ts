@@ -29,7 +29,6 @@ export class LoginPage {
    * 登陆方法
    */
   toLogin() {
-    debugger
     if (this.name === "admin" && this.password === "123456") {
       this.navCtrl.push("TabsPage");
     } else {

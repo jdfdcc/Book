@@ -6,13 +6,42 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>moreFuc</ion-title>
-  </ion-navbar>
+    <ion-navbar color="life">
+        <ion-searchbar (ionInput)="getItems($event)" placeholder="查询"></ion-searchbar>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal">
+              <ion-icon name="ios-notifications-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+    <ion-slides pager>
+        <ion-slide *ngFor="let it of moreList">
+            <div class="flex_box">
+                <div class="flex_item" *ngFor="let item of it">
+                    <div [ngStyle]="{'color': item.style,'border-color':item.style}" *ngIf="item.type!=='img'">
+                        <ion-icon name="{{item.icon}}"></ion-icon>
+                    </div>
+                    <img src="assets/img/icon/{{item.img}}" *ngIf="item.type==='img'">
+                    <span>{{item.text}}</span>
+                </div>
+            </div>
+        </ion-slide>
+    </ion-slides>
+    <section style="height:400px;background:white;margin-top:5px">2</section>
 </ion-content>
+
+<!--<div class="flex_box">
+                <div class="flex_item" *ngFor="let item of moreList">
+                    <section *ngFor="let it of item">
+                        <div [ngStyle]="{'color': it.style,'border-color':it.style}">
+                            <ion-icon name="{{it.icon}}"></ion-icon>
+                        </div>
+                        <span>{{it.text}}</span>
+                    </section>
+                </div>
+            </div>-->

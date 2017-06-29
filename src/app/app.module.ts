@@ -47,16 +47,15 @@ import { Contacts } from "@ionic-native/contacts";
       tabsHideOnSubPages: true,
       backButtonText: "返回",
       activator: "ripple",
-      modalEnter:"",
-      modalLeave:"",
       platforms: {
         android: {
         },
         ios: {
           // backButtonIcon: "ios-arrow-back",
           iconMode: "ios",
-          // modalEnter: "modal-ios-slide-in",
-          // modalLeave: "modal-ios-slide-out",
+          modalEnter: "modal-md-slide-in",
+          modalLeave: "modal-md-slide-out",
+          activator: "ripple",
           // pageTransition: "ios",
         }
       }

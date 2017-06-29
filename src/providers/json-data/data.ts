@@ -41,5 +41,19 @@ export class Data {
     })
   }
 
+  /**
+   * 获取本地JSON文件数据
+   * @param jsonName 获取的JSON文件名
+   */
+  getJson(jsonName) {
+    return new Promise((resolve, reject) => {
+      this.http.get('assets/json/' + jsonName+".json").subscribe(res => {
+        this.data = res.json();
+        resolve(this.data);
+      }, err => {
+        reject(err);
+      });
+    })
+  }
 
 }

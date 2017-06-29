@@ -31,7 +31,7 @@ export class MyApp {
       // statusBar.styleDefault();
       statusBar.overlaysWebView(true);
       statusBar.backgroundColorByName("white");
-      // keyboard.disableScroll(false);
+      keyboard.disableScroll(false);
       // keyboard.hideKeyboardAccessoryBar(false);
       //初始化数据信息
       // sqLite.create({

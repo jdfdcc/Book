@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, PopoverController, App } from 'ion
 import { StatusBar } from '@ionic-native/status-bar';
 import { ClickiPoperComponent } from "../../../components/clicki-poper/clicki-poper";
 
+
 /**
  * Generated class for the MainPage page.
  *
@@ -121,7 +122,7 @@ export class MainPage {
       }, {
         id: "1", text: "面对面快传", url: "ClickPage", icon: "ios-paper-outline"
       }, {
-        id: "1", text: "打卡", url: "ClickPage", icon: "ios-settings-outline"
+        id: "1", text: "运动", url: "ClickPage", icon: "ios-settings-outline"
       }]
     });
     popover.present({
@@ -137,5 +138,6 @@ export class MainPage {
    */
   toDetail(item) {
     this.navCtrl.push("CustomerDetailPage", { cus: item });
+    // this.Jalert.alertMsg(['用户名或者密码不正确！'])
   }
 }

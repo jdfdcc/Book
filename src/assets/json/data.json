@@ -1,0 +1,72 @@
+{
+    "moreObj": [
+        [{
+            "text": "美食",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "food.png"
+        }, {
+            "text": "快餐小吃",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "kc.png"
+        }, {
+            "text": "火锅",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "hg.png"
+        }, {
+            "text": "热门商圈",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "sq.png"
+        }, {
+            "text": "休闲娱乐",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "yl.png"
+        }, {
+            "text": "外卖",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "wm.png"
+        }, {
+            "text": "超市",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "cs.png"
+        }, {
+            "text": "KTV",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "ktv.png"
+        }, {
+            "text": "丽人",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "lr.png"
+        }, {
+            "text": "电影",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "dy.png"
+        }],
+        [{
+            "text": "电影",
+            "icon": "ios-restaurant",
+            "style": "red",
+            "type": "img",
+            "img": "dy.png"
+        }]
+    ]
+}

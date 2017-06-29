@@ -17,7 +17,7 @@ export class TabsPage {
   tab2Root: any = 'FirstPage';
   tab3Root: any = 'FirstPage';
   tab4Root: any = 'FirstPage';
-  tab5Root: any = 'FirstPage';
+  tab5Root: any = 'MoreFucPage';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     navCtrl.swipeBackEnabled = false;
   }
