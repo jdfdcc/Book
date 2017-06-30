@@ -58,5 +58,12 @@ page-custom-add {
     }
     .input-cover {
         position: static!important;
-    }
+        pointer-events: auto!important;
+    } // .input-has-focus .input-cover {
+    //     position: static!important;
+    //     pointer-events: auto!important;
+    // }
+    // .input-has-focus {
+    //     pointer-events: auto!important;
+    // }
 }

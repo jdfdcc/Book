@@ -45,6 +45,9 @@ import { Contacts } from "@ionic-native/contacts";
     ProvidersModule,
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: true,
+      inputCloning: true,
+      scrollAssist: false,
+      autoFocusAssist:false,
       backButtonText: "返回",
       activator: "ripple",
       platforms: {

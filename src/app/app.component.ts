@@ -32,7 +32,7 @@ export class MyApp {
       statusBar.overlaysWebView(true);
       statusBar.backgroundColorByName("white");
       keyboard.disableScroll(false);
-      // keyboard.hideKeyboardAccessoryBar(false);
+      keyboard.hideKeyboardAccessoryBar(true);
       //初始化数据信息
       // sqLite.create({
       //   name: 'data.db',

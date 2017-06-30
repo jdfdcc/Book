@@ -7,7 +7,7 @@
 <ion-header>
 
     <ion-navbar color="life">
-        <ion-searchbar (ionInput)="getItems($event)" placeholder="查询"></ion-searchbar>
+        <ion-searchbar animated="true" (ionInput)="getItems($event)" placeholder="查询"></ion-searchbar>
         <ion-buttons end>
             <button ion-button icon-only color="royal">
               <ion-icon name="ios-notifications-outline"></ion-icon>
@@ -32,16 +32,18 @@
             </div>
         </ion-slide>
     </ion-slides>
-    <section style="height:400px;background:white;margin-top:5px">2</section>
+    <ion-list>
+        <ion-item style="border-top:none">
+            <ion-avatar item-start>
+                <img src="assets/img/icon/good.jpg">
+            </ion-avatar>
+            <p class="small_p"><button>推荐</button>一粒米都没有的炒饭XXXXXXXXXXXXXXXXXXX</p>
+            <p class="small_p"><button>推荐</button>这东西看着小，一碗就饱了XXXXXXXXXXXXXXXXXXX</p>
+            <button ion-button clear item-end>></button>
+        </ion-item>
+    </ion-list>
+    <section class="flex_box" style="height:80px;background:white;">
+        <div class="flex_item nomal_item">1</div>
+        <div class="flex_item nomal_item">1</div>
+    </section>
 </ion-content>
-
-<!--<div class="flex_box">
-                <div class="flex_item" *ngFor="let item of moreList">
-                    <section *ngFor="let it of item">
-                        <div [ngStyle]="{'color': it.style,'border-color':it.style}">
-                            <ion-icon name="{{it.icon}}"></ion-icon>
-                        </div>
-                        <span>{{it.text}}</span>
-                    </section>
-                </div>
-            </div>-->
