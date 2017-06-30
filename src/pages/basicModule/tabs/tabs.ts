@@ -19,7 +19,7 @@ export class TabsPage {
 
   mainRoot: any = 'MainPage';
   tab2Root: any = 'FirstPage';
-  tab3Root: any = 'FirstPage';
+  tab3Root: any = 'ProposalHomePage';
   tab4Root: any = 'FirstPage';
   tab5Root: any = 'MoreFucPage';
   constructor(public navCtrl: NavController,

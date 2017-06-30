@@ -22,7 +22,8 @@ import { Camera } from '@ionic-native/camera';
 import { SQLite } from '@ionic-native/sqlite';
 import { Contacts } from "@ionic-native/contacts";
 
-
+//ainimation
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';   
 // import { HearBarColorDirective } from "../directives/hear-bar-color/hear-bar-color";
 
 
@@ -41,6 +42,7 @@ import { Contacts } from "@ionic-native/contacts";
     PipesModule,
     //存放所有控件集合
     ComponentsModule,
+    BrowserAnimationsModule,
     //所有providers
     ProvidersModule,
     IonicModule.forRoot(MyApp, {
