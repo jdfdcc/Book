@@ -1,5 +1,5 @@
-import { Component, trigger, state, style, animate, transition, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, PopoverController, App } from 'ionic-angular';
+import { Component, trigger, state, style, animate, transition, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { IonicPage, NavController, NavParams, PopoverController, App, Content } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ClickiPoperComponent } from "../../../components/clicki-poper/clicki-poper";
 
@@ -16,11 +16,14 @@ import { ClickiPoperComponent } from "../../../components/clicki-poper/clicki-po
   templateUrl: 'main.html'
 })
 export class MainPage {
+  @ViewChild(Content) content: Content;
+  private showTab: boolean = false;//是否显示滚到到顶部
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private statusBar: StatusBar,
     private popoverCtrl: PopoverController,
-    private app: App) {
+    private app: App,
+    public cd: ChangeDetectorRef) {
 
   }
   ionViewWillEnter() {
@@ -30,8 +33,16 @@ export class MainPage {
    */
   ionViewWillLeave() {
   }
-  
+
   scrollHandler(e) {
-    console.log(e.scrollTop)
+    this.showTab = e.scrollTop >= 400;
+    this.cd.detectChanges();
+  }
+  /**
+   * 滚到顶部
+   */
+  toTop() {
+    this.showTab = false;
+    this.content.scrollToTop();
   }
 }

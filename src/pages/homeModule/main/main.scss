@@ -23,4 +23,10 @@ page-main {
         width: 100%;
         color: #fff;
     }
+    .fab {
+        background: rgba(255, 255, 255, .5);
+        ion-icon {
+            font-size: 4rem;
+        }
+    }
 }
