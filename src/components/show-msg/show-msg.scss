@@ -3,33 +3,38 @@ show-msg {
         background-color: rgba(1, 1, 1, .5)!important;
     }
     ion-scroll {
-        border-bottom: 1px solid gainsboro;
-        height: 206px;
-        margin-top: 44px;
+        // border-bottom: 1px solid gainsboro;
+        text-align: center;
+        height: 90%;
+        margin: 5% 2%; // margin-top: 44px;
     }
     ion-scroll p {
-        text-align: left;
+        text-align: center;
         padding: 0px 5px;
         font-size: 1.6rem;
     }
     .msg_content {
-        background: rgb(255, 255, 255);
-        width: 80%;
-        left: 10%;
-        min-height: 300px;
-        top: 20%;
-        position: absolute;
+        @include box(80%, 52%);
+        background: rgba(1, 1, 1, 0.6);
+        margin-left: 10%;
+        margin-top: 29%;
         border-radius: 11px;
+        color: rgb(255, 255, 255);
+        border: 1px solid;
     }
     .toolbar-ios {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
-    .ok_btn {
-        bottom: 3px;
-        position: absolute;
-        width: 100px;
-        left: calc(50% - 50px);
-        height: 39px;
+    .ti_btn {
+        @include box(65px, 65px);
+        bottom: 21%;
+        color: rgb(255, 255, 255);
+        background: rgb(255, 255, 255);
+        text-align: center;
+        line-height: 65px;
+        margin-left: calc(50% - 65px/2);
+        background: rgba(1, 1, 1, 0);
+        font-size: 4rem;
     }
 }

@@ -1,0 +1,15 @@
+page-tool-home {
+    ion-grid {
+        padding: 0px!important;
+        ion-col {
+            // min-height: 128px!important;
+            text-align: center;
+            border-right: 1px solid gray;
+            border-bottom: 1px solid gray;
+            padding: 25px 0px!important;
+            ion-icon {
+                font-size: 5rem;
+            }
+        }
+    }
+}

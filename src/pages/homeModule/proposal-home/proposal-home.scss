@@ -13,10 +13,14 @@ page-proposal-home {
             margin-top: 3%;
             background-size: 100%, 100%;
             background-repeat: no-repeat;
-            text-align: center;
-            line-height: 140px;
+            text-align: center; // line-height: 140px;
+            display: flex;
+            align-items: center;
             color: rgb(255, 255, 255);
             font-size: 1.8rem;
+            span {
+                width: 100%;
+            }
         }
         section:first-child {
             background-image: url('../assets/img/proposal/1.png');

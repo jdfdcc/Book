@@ -18,9 +18,9 @@ export class TabsPage {
   private nativeOpt: NativeKeyboardOptions;
 
   mainRoot: any = 'MainPage';
-  tab2Root: any = 'FirstPage';
+  tab2Root: any = 'CustomHomePage';
   tab3Root: any = 'ProposalHomePage';
-  tab4Root: any = 'FirstPage';
+  tab4Root: any = 'ToolHomePage';
   tab5Root: any = 'MoreFucPage';
   constructor(public navCtrl: NavController,
     public navParams: NavParams,

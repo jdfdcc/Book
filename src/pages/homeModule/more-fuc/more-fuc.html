@@ -26,7 +26,7 @@
                     <div [ngStyle]="{'color': item.style,'border-color':item.style}" *ngIf="item.type!=='img'">
                         <ion-icon name="{{item.icon}}"></ion-icon>
                     </div>
-                    <img src="assets/img/icon/{{item.img}}" *ngIf="item.type==='img'">
+                    <section> <img src="assets/img/icon/{{item.img}}" *ngIf="item.type==='img'"></section>
                     <span>{{item.text}}</span>
                 </div>
             </div>

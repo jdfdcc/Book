@@ -1,0 +1,32 @@
+page-custom-home {
+    .toolbar-ios {
+        padding: 0px
+    }
+    ion-scroll[scrollX] {
+        white-space: nowrap;
+        // width: -moz-calc(100% - 40px);
+        // width: -webkit-calc(100% - 40px);
+        // width: calc(100% - 40px);
+        height: 42px;
+        .scroll-item {
+            display: inline-block;
+            height: -moz-calc(100% - 2px);
+            height: -webkit-calc(100% - 2px);
+            height: calc(100% - 2px);
+            height: 43px;
+            line-height: 40px;
+            min-width: 63px;
+            text-align: center;
+            // color: rgb(128, 128, 128);
+            color: white;
+            font-size: 1.5rem;
+        }
+        .choosed {
+            border-bottom: 2px solid blue;
+            color: blue;
+        }
+        .scroll-content {
+            height: 60px;
+        }
+    }
+}

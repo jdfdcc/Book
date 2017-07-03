@@ -68,5 +68,42 @@
             "type": "img",
             "img": "dy.png"
         }]
-    ]
+    ],
+    "toolList": [{
+        "text": "计算器",
+        "color": "gray",
+        "icon": "ios-calculator"
+    }, {
+        "text": "银行卡",
+        "color": "blue",
+        "icon": "ios-card-outline"
+    }, {
+        "text": "小车",
+        "color": "black",
+        "icon": "ios-car-outline"
+    }, {
+        "text": "拍照",
+        "color": "dark",
+        "icon": "ios-cash-outline"
+    }, {
+        "text": "购物",
+        "color": "red",
+        "icon": "ios-cart-outline"
+    }, {
+        "text": "日记本",
+        "color": "black",
+        "icon": "ios-clipboard-outline"
+    }, {
+        "text": "家人",
+        "color": "gold",
+        "icon": "ios-contacts-outline"
+    }, {
+        "text": "小工具",
+        "color": "green",
+        "icon": "ios-construct-outline"
+    }, {
+        "text": "更多",
+        "color": "gray",
+        "icon": "ios-add-outline"
+    }]
 }

@@ -8,21 +8,28 @@ page-more-fuc {
         background: white
     }
     .flex_box {
-        display: inline-flex;
         margin-top: 10px;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
-        height: 66px;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         .flex_item {
             min-height: 45%;
-            min-width: 16%;
+            min-width: 18%;
             max-width: 20%;
-            margin: 2px;
-            flex-grow: 1;
-            img {
-                @include box(45px, 45px);
-                display: inherit;
-                margin-left: 18%;
+            -webkit-box-flex: 0 0 20%;
+            -moz-box-flex: 0 0 20%;
+            -webkit-flex: 0 0 20%;
+            -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+            section {
+                align-items: center;
+                width: 100%;
+                img {
+                    @include box(45px, 45px); // display: inherit;
+                }
             }
             div {
                 background-size: 100% 100%;
@@ -44,6 +51,7 @@ page-more-fuc {
         .nomal_item {
             min-width: initial!important;
             max-width: initial!important;
+            flex: 1;
             &:first-child {
                 border-right: 1px solid map-get($colors, life);
             }
@@ -59,8 +67,7 @@ page-more-fuc {
             color: rgb(255, 165, 0);
             border-radius: 3px;
             margin: 0px 5px;
-            min-height: 23px;
-            // min-width: 53px;
+            min-height: 23px; // min-width: 53px;
         }
     }
     .swiper-slide {

@@ -12,18 +12,22 @@
     </ion-toolbar>
 </ion-header>-->
 
-<ion-content (click)="close()" tappable scrollY="false" has-bouncing="true">
+<ion-content (click)="close()" tappable scroll="false" has-bouncing="true">
     <section (click)="$event.stopPropagation();" class="msg_content">
-        <ion-header>
+        <!--<ion-header>
             <ion-toolbar color="life">
                 <ion-title>
                     {{title}}
                 </ion-title>
             </ion-toolbar>
-        </ion-header>
+        </ion-header>-->
         <ion-scroll scrollY="true">
             <p *ngFor="let item of msgList;let i = index">{{i+1}}、{{item}}</p>
         </ion-scroll>
-        <button (click)="close()" class="ok_btn" ion-button color="life">确定</button>
+        <!--<button (click)="close()" class="ok_btn" ion-button color="life">确定</button>-->
+    </section>
+    <br>
+    <section class="ti_btn">
+        <ion-icon name="ios-close-circle-outline"></ion-icon>
     </section>
 </ion-content>
