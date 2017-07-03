@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { ViewController, App } from 'ionic-angular';
 /**
  * Generated class for the ChartsComponent component.
  *
@@ -8,42 +8,32 @@ import { Component } from '@angular/core';
  */
 declare var echarts;
 @Component({
-  selector: 'charts',
-  templateUrl: 'charts.html'
+    selector: 'charts',
+    templateUrl: 'charts.html'
 })
 export class ChartsComponent {
-
-  text: string;
-
-  constructor() {
-   
-  }
-
-  ngOnInit(){
-    var myChart = echarts.init(document.getElementById('main'));
-
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: 'ECharts 入门示例'
-            },
-            tooltip: {},
-            legend: {
-                data:['销量']
-            },
-            xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-            },
-            yAxis: {},
-            series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
-
+    @Input() opt: any;
+    private myChart: any;
+    constructor(viewCtrl: ViewController) {
+        console.log(viewCtrl);
+    }
+    /**
+     * 初始化数据
+     */
+    ngOnInit() {
+        // this.navParams.data;
+        this.myChart = echarts.init(document.getElementById('main'));
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-  }
+        // myChart.setOption(this.opt);
+    }
+
+    // ngOnChanges(changes: SimpleChanges) {
+    //    console.dir(changes['opt']);
+    //    this.opt && this.myChart.setOption(this.opt);
+    // }
+    ngOnChanges(changes: SimpleChanges) {
+        console.dir(changes);
+        this.opt && this.myChart.setOption(this.opt); 
+    }
 
 }

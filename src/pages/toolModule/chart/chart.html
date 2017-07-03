@@ -3,8 +3,7 @@
         <ion-title>图表 </ion-title>
     </ion-navbar>
 </ion-header>
-
-
 <ion-content>
-    <charts></charts>
+    <input [(ngModel)]="componentProperty" />
+    <charts [(opt)]="option"></charts>
 </ion-content>
