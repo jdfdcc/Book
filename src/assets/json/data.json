@@ -102,6 +102,11 @@
         "color": "green",
         "icon": "ios-construct-outline"
     }, {
+        "text": "图表",
+        "color": "gray",
+        "icon": "logo-xbox",
+        "url": "ChartPage"
+    }, {
         "text": "更多",
         "color": "gray",
         "icon": "ios-add-outline"

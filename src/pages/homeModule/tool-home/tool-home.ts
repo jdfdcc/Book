@@ -28,4 +28,11 @@ export class ToolHomePage {
     })
   }
 
+  /**
+   * 点击进入对于的文件名
+   */
+  toModule(item) {
+    item.url && this.navCtrl.push(item.url);
+  }
+
 }

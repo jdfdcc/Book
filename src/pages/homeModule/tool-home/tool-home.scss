@@ -2,14 +2,23 @@ page-tool-home {
     ion-grid {
         padding: 0px!important;
         ion-col {
+            &:last-child {
+                border-right: .5px solid green;
+            }
             // min-height: 128px!important;
             text-align: center;
-            border-right: 1px solid gray;
-            border-bottom: 1px solid gray;
+            border-right: .5px solid green;
+            border-bottom: .5px solid green;
             padding: 25px 0px!important;
             ion-icon {
                 font-size: 5rem;
             }
+        }
+        .col_border_top {
+            border-top: .5px solid green;
+        }
+        .col_border_left {
+            border-left: .5px solid green;
         }
     }
 }

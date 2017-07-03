@@ -23,7 +23,7 @@ import { SQLite } from '@ionic-native/sqlite';
 import { Contacts } from "@ionic-native/contacts";
 
 //ainimation
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';   
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { HearBarColorDirective } from "../directives/hear-bar-color/hear-bar-color";
 
 
