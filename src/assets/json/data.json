@@ -107,6 +107,11 @@
         "icon": "logo-xbox",
         "url": "ChartPage"
     }, {
+        "text": "日历",
+        "color": "green",
+        "icon": "ios-calendar-outline",
+        "url": "CalendarPage"
+    }, {
         "text": "更多",
         "color": "gray",
         "icon": "ios-add-outline"

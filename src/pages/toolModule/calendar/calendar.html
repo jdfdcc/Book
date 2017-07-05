@@ -1,0 +1,50 @@
+<!--
+  Generated template for the CalendarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="life">
+        <ion-title>日历</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content has-bouncing="false">
+    <datepicker [currentDate]="current" (choose)="change($event)"></datepicker>
+    <ion-card>
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="assets/img/heardImg/2.jpg">
+            </ion-avatar>
+            <h2>{{chooseDate | date :"yyyy年MM月dd日"}}</h2>
+        </ion-item>
+        <img src="assets/img/one-piece/suolong/suolong.jpeg">
+        <ion-card-content>
+            <p>观音灵签是民间流传的，在佛前占卦的一种求签签种，（佛法当中，有地藏菩萨亲宣的“占察善恶业报经”，只要诚心，皆可根据经文求问各种事情。）观音灵签有三十签，六十签等， 流行版本的观音灵签为100签，签文自古至今流传久远，各地签文略有不同，大同小异，解签的意思差不多。
+            </p>
+        </ion-card-content>
+        <ion-row>
+            <ion-col>
+                <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 赞</div>
+      </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 关注</div>
+      </button>
+            </ion-col>
+            <ion-col center text-center>
+                <ion-note>
+                    11h 以前
+                </ion-note>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

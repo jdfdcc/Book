@@ -1,0 +1,25 @@
+<div (swipeLeft)="lastMonth($event);false" (swipeRight)="nextMonth($event);false">
+    <div class="calendar_head">
+        <button class="button_last" (click)="lastMonth()"> 
+        <ion-icon name="arrow-back"></ion-icon>
+    </button>
+        <span> {{_showDate | date: 'yyyy-MM'}}</span>
+        <button class="button_next" (click)="nextMonth()">
+        <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+    </div>
+    <div>
+        <div>
+            <ul>
+                <li class="item-top" *ngFor="let item of _dayNames" [ngStyle]="{'color': item === '六'||item === '日'?'red':'' }">
+                    {{item}}
+                </li>
+            </ul>
+            <ul class="calendar-cell">
+                <li tappable (click)="chooseItem(d)" *ngFor="let d of _dates,let i = index" [ngStyle]="{'color': i%7 === 5||i%7===6?'red':'' ,'background':d.id == _choosedId ?'rgb(222, 184, 135)':''}" [ngClass]="{'item-right':i%7 === 6,'calendar-pdisabled':d.inMonth,'calendar-toDay':d.isToDay}">
+                    {{d.date | date: 'dd'}} <br>初一
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

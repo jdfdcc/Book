@@ -21,7 +21,7 @@
 <ion-content>
     <ion-grid>
         <ion-row>
-            <ion-col (click)="toModule(item)" *ngFor="let item of toolList,let i=index" [ngStyle]="{'color': item.color}" [ngClass]="{'col_border_top':i == 1|| i == 2|| i == 0,'col_border_left':i%3==0}" col-4>
+            <ion-col tappable (click)="toModule(item)" *ngFor="let item of toolList,let i=index" [ngStyle]="{'color': item.color}" [ngClass]="{'col_border_top':i == 1|| i == 2|| i == 0,'col_border_left':i%3==0}" col-4>
                 <ion-icon name="{{item.icon}}"></ion-icon><br> <br>
                 <span>{{item.text}}</span>
             </ion-col>

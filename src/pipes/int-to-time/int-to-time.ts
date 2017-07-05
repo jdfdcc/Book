@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform ,Injectable} from '@angular/core';
 
 /**
  * Generated class for the IntToTimePipe pipe.
@@ -9,6 +9,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'intToTime',
 })
+@Injectable()
 export class IntToTimePipe implements PipeTransform {
   /**
    * 秒转换成时间

@@ -1,0 +1,62 @@
+datepicker {
+    font-family: cursive;
+    $color: rgb(15, 185, 185);
+    $font-color: green;
+    .calendar_head {
+        height: 45px;
+        line-height: 45px;
+        display: flex;
+        padding: 0px 5px;
+        width: 100%;
+        button {
+            background: none;
+            font-size: 2rem;
+            width: 45px;
+            color: rgb(95, 158, 160)
+        }
+        span {
+            width: 500px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+    padding-top: 20px;
+    ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+        li {
+            list-style-type: none;
+            width: calc(100% / 7);
+            border-left: 1px solid $color;
+            border-bottom: 1px solid $color;
+            text-align: center;
+            min-height: 32px;
+            padding: 5px;
+            &:last-child {
+                border-right: 1px solid $color;
+            }
+        }
+        .item-right {
+            border-right: 1px solid $color;
+        }
+        .item-top {
+            border-top: 1px solid $color;
+            background: rgb(240, 248, 255)
+        }
+        .calendar-pdisabled {
+            color: gray;
+        }
+        .calendar-toDay {
+            // color: red;
+            background: yellow;
+        }
+    }
+    .calendar-cell li {
+        // min-height: 45px;
+        // line-height: 45px;
+    }
+}
