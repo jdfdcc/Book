@@ -20,10 +20,9 @@ export class DatepickerComponent {
   _dates: Array<Date> = [];
 
   constructor(private cd: ChangeDetectorRef, private dateUtil: DateUtilsProvider) {
-    console.log(dateUtil.dateToSting(new Date()));
   }
 
-
+  
   ngOnInit() {
     this._current.setDate(1);
     this.initDates(this._current);
@@ -60,14 +59,14 @@ export class DatepickerComponent {
   /**
    * 上个月
    */
-  lastMonth(e) {
+  lastMonth() {
     this.changeMonth(-1);
     this.initDates(this._current);
   }
   /**
    * 下个月
    */
-  nextMonth(e) {
+  nextMonth() {
     this.changeMonth(1);
     this.initDates(this._current);
   }
@@ -83,7 +82,6 @@ export class DatepickerComponent {
    * 选择当前某个日期
    */
   chooseItem(item) {
-    console.log(this.dateUtil.GetLunarDay(item.date))
     this._choosedId = item.id;
     this._choose.emit(item);
   }

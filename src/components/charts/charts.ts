@@ -11,37 +11,12 @@ declare var echarts;
     template: `<div id="main"></div><button (click)="click()">点击</button>`
 })
 export class ChartsComponent {
-    _title: string = ""; //设置标题
+    @Input("title") _title: string = ""; //设置标题
+    @Input("xData") _xData: Array<any> = [];//X轴数据
+    @Input("yData") _yData: Array<any> = [];//Y轴数据
     _opt: any;//基础配置信息
-    _myChart: any;//图标
-    _xData: Array<any> = [];//X轴数据
-    _yData: Array<any> = [];//Y轴数据
-
-
-    /**
-     * @input {boolean} If true, scrolling along the X axis is enabled.
-     */
-    @Input()
-    get title() {
-        return this._title;
-    }
-    set title(val: any) {
-        this._title = val;
-    }
-    @Input()
-    get xData() {
-        return this._xData;
-    }
-    set xData(val: any) {
-        this._xData = val;
-    }
-    @Input()
-    get yData() {
-        return this._yData;
-    }
-    set yData(val: any) {
-        this._yData = val;
-    }
+    _myChart: any;//图标对象
+    
 
     constructor(viewCtrl: ViewController) {
     }
@@ -49,10 +24,13 @@ export class ChartsComponent {
      * 初始化数据
      */
     ngOnInit() {
-        console.log("22");
         this._myChart = echarts.init(document.getElementById('main'));
         this.initCharts();
     }
+    /**
+     * 监听数据的变化
+     * @param changes 
+     */
     ngOnChanges(changes: SimpleChanges) {
         this.initCharts();
     }
@@ -78,6 +56,52 @@ export class ChartsComponent {
                 data: this._yData
             }]
         };
+
+        this._opt = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [
+                        { value: 335, name: '直接访问' },
+                        { value: 310, name: '邮件营销' },
+                        { value: 234, name: '联盟广告' },
+                        { value: 135, name: '视频广告' },
+                        { value: 1548, name: '搜索引擎' }
+                    ]
+                }
+            ]
+        };
+
         this._myChart && this._myChart.setOption(this._opt);
     }
 

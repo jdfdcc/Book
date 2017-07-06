@@ -21,6 +21,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
 import { SQLite } from '@ionic-native/sqlite';
 import { Contacts } from "@ionic-native/contacts";
+// import { LogServiceProvider } from '../providers/log-service/log-service';
 // import { DatepickerComponent } from '../components/datepicker/datepicker';
 
 //ainimation
@@ -82,6 +83,7 @@ import { Contacts } from "@ionic-native/contacts";
     SQLite,
     Contacts,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    // LogServiceProvider,
   ]
 })
 export class AppModule { }
