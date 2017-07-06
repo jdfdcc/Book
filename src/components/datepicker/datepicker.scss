@@ -1,5 +1,5 @@
 datepicker {
-    font-family: cursive;
+    font-family: serif;
     $color: rgb(15, 185, 185);
     $font-color: green;
     .calendar_head {
@@ -38,6 +38,9 @@ datepicker {
             padding: 5px;
             &:last-child {
                 border-right: 1px solid $color;
+            }
+            span {
+                font-size: 1rem;
             }
         }
         .item-right {

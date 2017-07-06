@@ -1,4 +1,5 @@
 import { Component, ChangeDetectorRef, Output, EventEmitter, Input, SimpleChanges } from '@angular/core';
+import { DateUtilsProvider } from "../../providers/date-utils/date-utils";
 /**
  * Generated class for the DatepickerComponent component.
  *
@@ -13,12 +14,13 @@ export class DatepickerComponent {
 
   @Output("choose") _choose: EventEmitter<any> = new EventEmitter<any>();
   @Input("currentDate") _current: Date = new Date();
-  time: any = 0;
   _choosedId: string = "";
   _showDate: Date = new Date();
   _dayNames: Array<string> = ["一", "二", "三", "四", "五", "六", "日"];
   _dates: Array<Date> = [];
-  constructor(private cd: ChangeDetectorRef) {
+
+  constructor(private cd: ChangeDetectorRef, private dateUtil: DateUtilsProvider) {
+    console.log(dateUtil.dateToSting(new Date()));
   }
 
 
@@ -37,7 +39,7 @@ export class DatepickerComponent {
         date = this.getDateFrom_currentDate(tempDate, i),
         inMonth = date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear(),
         isToDay = inMonth && date.getDate() === new Date().getDate();
-      tempList.push({ id: date.getTime(), date, inMonth: !inMonth, isToDay })
+      tempList.push({ id: date.getTime(), date, inMonth: !inMonth, isToDay, day: this.dateUtil.GetLunarDay(date) })
     }
     this._dates = tempList;
     this._showDate = new Date(this._current.getFullYear() + "/" + (this._current.getMonth() + 1) + "/" + this._current.getDate());
@@ -81,6 +83,7 @@ export class DatepickerComponent {
    * 选择当前某个日期
    */
   chooseItem(item) {
+    console.log(this.dateUtil.GetLunarDay(item.date))
     this._choosedId = item.id;
     this._choose.emit(item);
   }
