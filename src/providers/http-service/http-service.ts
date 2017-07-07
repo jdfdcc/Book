@@ -46,9 +46,9 @@ export class HttpService {
       });
   }
   /**
-  * 发送post请求（无需登录人信息）
-  * @param url 请求地址
-  */
+   * 发送post请求（无需登录人信息）
+   * @param url 请求地址
+   */
   public httpPostNoAuth(url: string, body: any) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -60,9 +60,9 @@ export class HttpService {
       });
   }
   /**
- * 发送post请求（需登录人信息）
- * @param url 请求地址
- */
+   * 发送post请求（需登录人信息）
+   * @param url 请求地址
+   */
   public httpPostWithAuth(body: any, url: string) {
     return this.myInfoLocal = this.local.getJson('UserInfo')
       .then((result) => {
@@ -74,7 +74,10 @@ export class HttpService {
       });
   }
 
-
+  /**
+   * 处理请求错误方法
+   * @param error 错误信息
+   */
   private handleError(error: Response) {
     console.log(error);
     return Observable.throw(error.json().error || 'Server Error');

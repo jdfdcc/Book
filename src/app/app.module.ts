@@ -10,9 +10,7 @@ import { ComponentsModule } from "../components/components.module";
 import { PipesModule } from "../pipes/pipes.module";
 //使用httpModel
 import { HttpModule } from '@angular/http';
-
 import { Keyboard } from "@ionic-native/keyBoard";
-
 import { NativeKeyboard } from '@ionic-native/native-keyboard';
 //native
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,16 +19,10 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
 import { SQLite } from '@ionic-native/sqlite';
 import { Contacts } from "@ionic-native/contacts";
-// import { JdfDragDirective } from '../directives/jdf-drag/jdf-drag';
-// import { LogServiceProvider } from '../providers/log-service/log-service';
-// import { DatepickerComponent } from '../components/datepicker/datepicker';
-
 //ainimation
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { HearBarColorDirective } from "../directives/hear-bar-color/hear-bar-color";
 // import { DirectivesModule } from "../directives/directives.module";
-
-
 
 //基础模块
 @NgModule({

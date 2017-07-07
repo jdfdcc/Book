@@ -2,7 +2,6 @@ import { Directive, ElementRef } from '@angular/core';
 
 /**
  * Generated class for the JdfDragDirective directive.
- *
  * See https://angular.io/docs/ts/latest/api/core/index/DirectiveMetadata-class.html
  * for more info on Angular Directives.
  */
@@ -10,12 +9,13 @@ import { Directive, ElementRef } from '@angular/core';
   selector: '[jdfdrag]' // Attribute selector
 })
 export class JdfDragDirective {
-  private canDrag = false;
-
+  private canDrag = false;//是否允许拖动
   constructor(private ele: ElementRef) {
     console.log(this.ele)
   }
-
+  /**
+   * 初始化绑定信息
+   */
   ngOnInit() {
     let ele = this.ele.nativeElement, xCha, yCha;
     ele.addEventListener("mousedown", e => {
@@ -31,7 +31,7 @@ export class JdfDragDirective {
         }
       });
     });
-    document.addEventListener("mouseup", e => {
+    ele.addEventListener("mouseup", e => {
       this.canDrag = false;
       console.log(e)
       ele.removeEventListener("mousemove", function () {

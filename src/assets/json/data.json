@@ -82,12 +82,12 @@
     }, {
         "text": "拖拽",
         "color": "black",
-        "icon": "ios-images-outline",
+        "icon": "md-aperture",
         "url": "MovePage"
     }, {
-        "text": "计算器",
+        "text": "相册",
         "color": "gray",
-        "icon": "ios-calculator"
+        "icon": "ios-images-outline"
     }, {
         "text": "银行卡",
         "color": "blue",
