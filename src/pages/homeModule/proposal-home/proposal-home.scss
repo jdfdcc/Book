@@ -10,8 +10,8 @@ page-proposal-home {
         section {
             @include box(100%,
             25%);
+            background-size: 100% 100%;
             margin-top: 3%;
-            background-size: 100%, 100%;
             background-repeat: no-repeat;
             text-align: center; // line-height: 140px;
             display: flex;

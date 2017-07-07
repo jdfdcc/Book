@@ -70,6 +70,21 @@
         }]
     ],
     "toolList": [{
+        "text": "图表",
+        "color": "gray",
+        "icon": "logo-xbox",
+        "url": "ChartPage"
+    }, {
+        "text": "日历",
+        "color": "green",
+        "icon": "ios-calendar-outline",
+        "url": "CalendarPage"
+    }, {
+        "text": "拖拽",
+        "color": "black",
+        "icon": "ios-images-outline",
+        "url": "MovePage"
+    }, {
         "text": "计算器",
         "color": "gray",
         "icon": "ios-calculator"
@@ -101,16 +116,6 @@
         "text": "小工具",
         "color": "green",
         "icon": "ios-construct-outline"
-    }, {
-        "text": "图表",
-        "color": "gray",
-        "icon": "logo-xbox",
-        "url": "ChartPage"
-    }, {
-        "text": "日历",
-        "color": "green",
-        "icon": "ios-calendar-outline",
-        "url": "CalendarPage"
     }, {
         "text": "更多",
         "color": "gray",

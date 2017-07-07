@@ -1,5 +1,6 @@
 page-chart {
-    #main {
+    #main,
+    charts {
         @include box(100%, 400px);
     }
 }

@@ -1,0 +1,8 @@
+page-move {
+    .move {
+        @include box(200px, 200px);
+        // position: fixed;
+        background-color: red;
+        cursor: pointer;
+    }
+}

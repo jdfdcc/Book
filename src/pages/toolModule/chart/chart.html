@@ -5,6 +5,9 @@
 </ion-header>
 <ion-content>
     <input [(ngModel)]="componentProperty" />
-    <charts [(title)]="chartTitle" xData="一二三四五六日" [yData]="yData"></charts>
-    <button (click)="click()">dsadas</button>
+    <charts [option]="option"></charts><br><br>
+    <charts [option]="zoption"></charts><br><br>
+    <charts [option]="loption"></charts><br><br>
+    <charts [option]="boption"></charts><br><br>
+    <charts [option]="soption"></charts>
 </ion-content>

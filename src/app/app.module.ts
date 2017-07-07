@@ -21,12 +21,14 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
 import { SQLite } from '@ionic-native/sqlite';
 import { Contacts } from "@ionic-native/contacts";
+// import { JdfDragDirective } from '../directives/jdf-drag/jdf-drag';
 // import { LogServiceProvider } from '../providers/log-service/log-service';
 // import { DatepickerComponent } from '../components/datepicker/datepicker';
 
 //ainimation
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { HearBarColorDirective } from "../directives/hear-bar-color/hear-bar-color";
+// import { DirectivesModule } from "../directives/directives.module";
 
 
 
@@ -34,7 +36,7 @@ import { Contacts } from "@ionic-native/contacts";
 @NgModule({
   declarations: [
     MyApp,
-    
+    // JdfDragDirective,
     // DatepickerComponent,
     // HearBarColorDirective
   ],
@@ -53,7 +55,7 @@ import { Contacts } from "@ionic-native/contacts";
       tabsHideOnSubPages: true,
       inputCloning: true,
       scrollAssist: false,
-      autoFocusAssist:false,
+      autoFocusAssist: false,
       backButtonText: "返回",
       activator: "ripple",
       platforms: {
