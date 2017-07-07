@@ -8,6 +8,7 @@ import { PipesModule } from "../../pipes/pipes.module";
     DatepickerComponent,
   ],
   imports: [
+    PipesModule,
     IonicPageModule.forChild(DatepickerComponent),
   ],
   exports: [
