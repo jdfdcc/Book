@@ -1,30 +1,8 @@
-<!--<ion-header>
-    <ion-toolbar>
-        <ion-title>
-            Description
-        </ion-title>
-        <ion-buttons start>
-            <button ion-button (click)="dismiss()">
-        <span ion-text color="primary" showWhen="ios">Cancel</span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-      </button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header>-->
-
 <ion-content (click)="close()" tappable scroll="false" has-bouncing="true">
-    <section jdfdrag (click)="$event.stopPropagation();" class="msg_content">
-        <!--<ion-header>
-            <ion-toolbar color="life">
-                <ion-title>
-                    {{title}}
-                </ion-title>
-            </ion-toolbar>
-        </ion-header>-->
+    <section (click)="$event.stopPropagation();" class="msg_content">
         <ion-scroll scrollY="true">
             <p *ngFor="let item of msgList;let i = index">{{i+1}}、{{item}}</p>
         </ion-scroll>
-        <!--<button (click)="close()" class="ok_btn" ion-button color="life">确定</button>-->
     </section>
     <br>
     <section class="ti_btn">
