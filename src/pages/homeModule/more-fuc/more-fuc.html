@@ -33,7 +33,7 @@
         </ion-slide>
     </ion-slides>
     <ion-list>
-        <ion-item style="border-top:none">
+        <ion-item style="border-top:none;border-bottom:none">
             <ion-avatar item-start>
                 <img src="assets/img/icon/good.jpg">
             </ion-avatar>
@@ -41,9 +41,20 @@
             <p class="small_p"><button>推荐</button>这东西看着小，一碗就饱了XXXXXXXXXXXXXXXXXXX</p>
             <button ion-button clear item-end>></button>
         </ion-item>
+        <!--</ion-list>-->
+        <!--<section class="flex_box" style="height:80px;background:white;">
+        <div class="flex_item nomal_item">1</div>
+        <div class="flex_item nomal_item">1</div>
+    </section>-->
+        <!--<ion-list>-->
+        <br>
+        <ion-item *ngFor="let item of [1,2,3,4,5,6,7,8]">
+            <ion-thumbnail item-start>
+                <img src="assets/img/heardImg/3.jpg">
+            </ion-thumbnail>
+            <h2>蒙奇·D·路飞</h2>
+            <p>梦想：成为大上海最自由的人</p>
+            <button ion-button clear item-end>详情</button>
+        </ion-item>
     </ion-list>
-    <section class="flex_box" style="height:80px;background:white;">
-        <div class="flex_item nomal_item">1</div>
-        <div class="flex_item nomal_item">1</div>
-    </section>
 </ion-content>

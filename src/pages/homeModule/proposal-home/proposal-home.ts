@@ -37,5 +37,11 @@ export class ProposalHomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProposalHomePage');
   }
+  /**
+   * 页面跳转
+   */
+  toPage(url: string = "") {
+    url != "" && this.navCtrl.push(url);
+  }
 
 }

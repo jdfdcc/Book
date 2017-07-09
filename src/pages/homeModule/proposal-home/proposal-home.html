@@ -5,8 +5,8 @@
 </ion-header>
 <ion-content>
     <div class=" proposal_home">
-        <section><span>建议书列表</span> </section>
-        <section><span>已完成建议书</span></section>
-        <section><span>未完成建议书</span></section>
+        <section tappable (click)="toPage('ProposalListPage')"><span>建议书列表</span> </section>
+        <section tappable><span>已完成建议书</span></section>
+        <section tappable><span>未完成建议书</span></section>
     </div>
 </ion-content>

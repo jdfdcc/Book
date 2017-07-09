@@ -1,4 +1,4 @@
-<div (swipeLeft)="lastMonth($event);false" (swipeRight)="nextMonth($event);false">
+<div (swipeLeft)="nextMonth($event);false" (swipeRight)="lastMonth($event);false">
     <div class="calendar_head">
         <button class="button_last" (click)="lastMonth()"> 
         <ion-icon name="arrow-back"></ion-icon>
@@ -18,7 +18,7 @@
             <ul class="calendar-cell">
                 <li tappable (click)="chooseItem(d)" *ngFor="let d of _dates,let i = index" [ngStyle]="{'color': i%7 === 5||i%7===6?'red':'' ,'background':d.id == _choosedId ?'rgb(222, 184, 135)':''}" [ngClass]="{'item-right':i%7 === 6,'calendar-pdisabled':d.inMonth,'calendar-toDay':d.isToDay}">
                     {{d.date | date: 'dd'}} <br>
-                    <span>{{d.day.day}}</span>
+                    <!--<span>{{d.day.day}}</span>-->
                 </li>
             </ul>
         </div>

@@ -1,0 +1,14 @@
+<!-- Generated template for the DatescrollComponent component -->
+<div class="date_box">
+    <h3>2017年1月安排</h3>
+    <ion-scroll (scroll)="scroll()" #leftCats id="leftCats" scrollbar-x="false" scrollbar-y="false" scrollX scrollY="false">
+        <div class="scroll-item" [ngClass]="{'choosed':i == _chooseId}" *ngFor="let item of _dateList;let i = index">
+            <div tappable (click)="chooseDate(i)">
+                {{item | date:'dd'}}
+            </div>
+            <div tappable (click)="chooseDate(i)" style="font-size:.8rem">
+                {{toWeek(item)}}
+            </div>
+        </div>
+    </ion-scroll>
+</div>

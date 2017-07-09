@@ -1,5 +1,6 @@
-import { Component, ChangeDetectorRef, Output, EventEmitter, Input, SimpleChanges } from '@angular/core';
-import { DateUtilsProvider } from "../../providers/date-utils/date-utils";
+import { Component, ChangeDetectorRef, Output, EventEmitter, Input, SimpleChanges, ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
+// import { DateUtilsProvider } from "../../providers/date-utils/date-utils";
 /**
  * Generated class for the DatepickerComponent component.
  *
@@ -14,15 +15,20 @@ export class DatepickerComponent {
 
   @Output("choose") _choose: EventEmitter<any> = new EventEmitter<any>();
   @Input("currentDate") _current: Date = new Date();
+  @ViewChild(Slides) _slides: Slides;
   _choosedId: string = "";
   _showDate: Date = new Date();
   _dayNames: Array<string> = ["一", "二", "三", "四", "五", "六", "日"];
   _dates: Array<Date> = [];
 
-  constructor(private cd: ChangeDetectorRef, private dateUtil: DateUtilsProvider) {
+  _slidesList: Array<any> = [1, 2];
+
+  constructor(private cd: ChangeDetectorRef
+  // ,  private dateUtil: DateUtilsProvider
+  ) {
   }
 
-  
+
   ngOnInit() {
     this._current.setDate(1);
     this.initDates(this._current);
@@ -38,7 +44,9 @@ export class DatepickerComponent {
         date = this.getDateFrom_currentDate(tempDate, i),
         inMonth = date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear(),
         isToDay = inMonth && date.getDate() === new Date().getDate();
-      tempList.push({ id: date.getTime(), date, inMonth: !inMonth, isToDay, day: this.dateUtil.GetLunarDay(date) })
+      tempList.push({ id: date.getTime(), date, inMonth: !inMonth, isToDay
+        // , day: this.dateUtil.GetLunarDay(date) 
+      })
     }
     this._dates = tempList;
     this._showDate = new Date(this._current.getFullYear() + "/" + (this._current.getMonth() + 1) + "/" + this._current.getDate());
@@ -90,5 +98,25 @@ export class DatepickerComponent {
    */
   ngOnChanges(changes: SimpleChanges) {
     this.initDates(this._current);
+  }
+  /**
+    * 改变
+    */
+  slideChanged() {
+    let index = this._slides.getActiveIndex();
+    let isBeginning = this._slides.isBeginning();
+    let isEnd = this._slides.isEnd();
+    let that = this;
+    console.log('isBeginning :', isBeginning, 'isEnd :', isEnd);
+    console.log(this._slidesList[index])
+    if (isEnd) {
+      console.log(this._slidesList)
+      this._slidesList.push(this._slidesList.length);
+
+    } else if (isBeginning) {
+      console.log(this._slidesList)
+      this._slidesList.unshift(this._slidesList.length);
+
+    }
   }
 }

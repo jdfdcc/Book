@@ -17,6 +17,7 @@ export class JdfDragDirective {
    * 初始化绑定信息
    */
   ngOnInit() {
+    console.log("directive----->init")
     let ele = this.ele.nativeElement, xCha, yCha;
     ele.addEventListener("mousedown", e => {
       // ele.setAttribute("position", "fixed");

@@ -23,6 +23,10 @@ export class MovePage {
     this.startDrag();
   }
 
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter DscrolltoolPage');
+  }
+
   startDrag() {
     // let ele = document.getElementById("move"), xCha, yCha, canMvie = false;
     // ele.addEventListener("mousedown", e => {

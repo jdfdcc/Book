@@ -1,0 +1,28 @@
+page-proposal-list {
+    $bg_color: rgb(230, 230, 230);
+    .fullHeght {
+        height: 100%;
+        border-right: 1px solid $bg_color;
+        padding: 0px;
+        background: $bg_color;
+    }
+    ion-grid {
+        height: 100%;
+        padding: 0px!important;
+        ion-row,
+        ion-col ion-scroll {
+            height: 100%;
+            .scroll-item {
+                min-height: 55px;
+                border-bottom: .5px solid $bg_color;
+                line-height: 55px;
+                text-align: center;
+                background: white;
+            }
+            .choosed {
+                color: red;
+                background: $bg_color;
+            }
+        }
+    }
+}

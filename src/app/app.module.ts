@@ -19,6 +19,8 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
 import { SQLite } from '@ionic-native/sqlite';
 import { Contacts } from "@ionic-native/contacts";
+// import { AuthDirective } from '../directives/auth/auth';
+// import { DatescrollComponent } from '../components/datescroll/datescroll';
 //ainimation
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { HearBarColorDirective } from "../directives/hear-bar-color/hear-bar-color";
@@ -28,6 +30,8 @@ import { Contacts } from "@ionic-native/contacts";
 @NgModule({
   declarations: [
     MyApp,
+    // AuthDirective,
+    // DatescrollComponent,
     // JdfDragDirective,
     // DatepickerComponent,
     // HearBarColorDirective
@@ -48,7 +52,7 @@ import { Contacts } from "@ionic-native/contacts";
       inputCloning: true,
       scrollAssist: false,
       autoFocusAssist: false,
-      backButtonText: "返回",
+      backButtonText: "",
       activator: "ripple",
       platforms: {
         android: {

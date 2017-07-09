@@ -1,0 +1,46 @@
+datescroll {
+    .date_box {
+        background: -webkit-linear-gradient(right, green, #71C671, green); // /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(right, green, #71C671, green); // /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(right, green, #71C671, green); // /* Firefox 3.6 - 15 */
+        background: linear-gradient(to right, green, #71C671, green); // background: green;
+        /* 标准的语法（必须放在最后）*/
+        h3 {
+            margin-top: 0px;
+            padding-top: 5px;
+            margin-bottom: 5px;
+            font-size: 1.7rem;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+    }
+    .toolbar-ios {
+        padding: 0px
+    }
+    ion-scroll[scrollX] {
+        min-height: 60px;
+        white-space: nowrap;
+        .scroll-item {
+            border-radius: 20px;
+            margin: 0px 3px;
+            width: 15%;
+            display: inline-block;
+            height: calc(100% - 2px);
+            line-height: 25px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            div {
+                font-size: 2.3rem;
+            }
+        } // 
+        .choosed {
+            background: darkgoldenrod;
+        }
+        .scroll-content {
+            padding: 5px;
+            height: -moz-calc(100% + 5px);
+            height: -webkit-calc(100% + 5px);
+            height: calc(100% + 5px);
+        }
+    }
+}

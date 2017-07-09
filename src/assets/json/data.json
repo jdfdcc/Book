@@ -80,6 +80,11 @@
         "icon": "ios-calendar-outline",
         "url": "CalendarPage"
     }, {
+        "text": "滚动日期",
+        "color": "red",
+        "icon": "ios-calendar-outline",
+        "url": "DscrolltoolPage"
+    }, {
         "text": "拖拽",
         "color": "black",
         "icon": "md-aperture",

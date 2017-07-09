@@ -2,23 +2,27 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ProposalPage page.
+ * Generated class for the DscrolltoolPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-proposal',
-  templateUrl: 'proposal.html',
+  selector: 'page-dscrolltool',
+  templateUrl: 'dscrolltool.html',
 })
-export class ProposalPage {
+export class DscrolltoolPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProposalPage');
+    console.log('ionViewDidLoad DscrolltoolPage');
   }
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter DscrolltoolPage');
+  }
+
 
 }

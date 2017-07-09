@@ -5,15 +5,11 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
     <ion-navbar color="life">
         <ion-title>日历</ion-title>
     </ion-navbar>
-
 </ion-header>
-
-
-<ion-content has-bouncing="false">
+<ion-content no-scroll no-bounce>
     <datepicker [currentDate]="current" (choose)="change($event)"></datepicker>
     <ion-card>
         <ion-item>
