@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, NavController, App } from 'ionic-angular';
 
 /*
   Generated class for the UtilsProvider provider.
@@ -10,7 +10,7 @@ import { Platform } from 'ionic-angular';
 @Injectable()
 export class UtilsProvider {
 
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform, private app: App) {
     console.log('Hello UtilsProvider Provider');
   }
   /**
@@ -53,4 +53,15 @@ export class UtilsProvider {
 
     return uuid.join('');
   }
+  /**
+   * 重写页面跳转 
+   *  跳转相应的页面 进行路由跳转权限控制
+   * @param pageStr 页面
+   * @param animation 页面跳转动画
+   */
+  toPage(pageStr: string = "loginPage", animation) {
+    this.app.getActiveNav().push(pageStr);
+    // navCtrl.push(pageStr);
+  }
+
 }

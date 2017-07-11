@@ -1,5 +1,4 @@
 import { Directive, ElementRef } from '@angular/core';
-
 /**
  * Generated class for the JdfDragDirective directive.
  * See https://angular.io/docs/ts/latest/api/core/index/DirectiveMetadata-class.html

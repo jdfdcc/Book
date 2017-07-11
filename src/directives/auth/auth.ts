@@ -13,7 +13,8 @@ import { ViewController, App } from 'ionic-angular';
 export class AuthDirective {
 
   constructor(private app: App) {
-      app.getRootNav().push("LoginPage");
-  } 
+    console.log("auth")
+    app.getRootNav().push("LoginPage");
+  }
 
 }
