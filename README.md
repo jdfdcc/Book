@@ -8,7 +8,4 @@ $ ionic cordova platform add ios
 $ ionic cordova run ios
 $ ionic serve
 ```
-* author ： jdf
-* 邮箱 ： 805841744@qq.com
-* 生命不息，战斗不止，承接各种H5兼职，只要你要，我就有！！！
 
